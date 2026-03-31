@@ -2411,22 +2411,14 @@ input, textarea { font-family: inherit; }
     -webkit-backdrop-filter: none;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   }
-  .nav__brand { color: var(--c-white); }
-  .nav__burger span { background-color: var(--c-white); }
-  .nav__links { display: none; }
-  .nav__burger { display: flex; }
-  .nav__inner > .btn {
-    display: inline-flex;
-    background: var(--c-white);
-    color: #381238;
-    margin-left: auto;
-    margin-right: var(--sp-4);
-    padding: 0.4rem 0.65rem;
-    font-size: 0.55rem;
-    gap: 4px;
-    align-items: center;
-    border-radius: var(--r-full);
+  .nav__inner {
+    justify-content: center;
+    padding-inline: var(--sp-6);
   }
+  .nav__brand { color: var(--c-white); }
+  .nav__links { display: none; }
+  .nav__burger { display: none; }
+  .nav__inner > .btn { display: none; }
 
   .hero__layout {
     padding-top: calc(var(--sp-10) / 2);
