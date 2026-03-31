@@ -1874,7 +1874,7 @@ input, textarea { font-family: inherit; }
 
 /* ── FOOTER ─────────────────────────────────────────────────── */
 .footer {
-  background: var(--c-surface-highest);
+  background: var(--c-primary);
   padding-top: var(--sp-20);
   padding-bottom: var(--sp-10);
 }
@@ -1893,13 +1893,13 @@ input, textarea { font-family: inherit; }
   font-family: var(--font-serif);
   font-size: 1.875rem;
   font-weight: 700;
-  color: var(--c-primary);
+  color: var(--c-white);
   margin-bottom: var(--sp-4);
 }
 
 .footer__tagline {
   font-size: 0.875rem;
-  color: var(--c-on-surface-faint);
+  color: rgba(252,249,248,0.5);
   line-height: 1.65;
   max-width: 22rem;
 }
@@ -1922,10 +1922,10 @@ input, textarea { font-family: inherit; }
 
 .footer__link {
   font-size: 0.875rem;
-  color: var(--c-on-surface-faint);
+  color: rgba(252,249,248,0.55);
   transition: color var(--t-fast);
 }
-.footer__link:hover { color: var(--c-secondary); }
+.footer__link:hover { color: var(--c-secondary-dim); }
 
 .footer__socials {
   display: flex;
@@ -1937,15 +1937,16 @@ input, textarea { font-family: inherit; }
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.45);
+  background: rgba(255,255,255,0.1);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--c-primary);
-  transition: background var(--t-fast), transform var(--t-fast);
+  color: rgba(252,249,248,0.7);
+  transition: background var(--t-fast), color var(--t-fast), transform var(--t-fast);
 }
 .footer__social:hover {
-  background: rgba(0,106,101,0.15);
+  background: rgba(68,219,210,0.15);
+  color: var(--c-secondary-dim);
   transform: translateY(-2px);
 }
 .footer__social .material-symbols-outlined { font-size: 1.25rem; }
@@ -1956,18 +1957,18 @@ input, textarea { font-family: inherit; }
   font-weight: 500;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(75,25,75,0.4);
+  color: rgba(252,249,248,0.4);
   margin-bottom: var(--sp-2);
 }
 
 .footer__newsletter-form {
   display: flex;
   align-items: center;
-  border-bottom: 1px solid rgba(75,25,75,0.2);
+  border-bottom: 1px solid rgba(255,255,255,0.2);
   padding-bottom: var(--sp-2);
   transition: border-color var(--t-fast);
 }
-.footer__newsletter-form:focus-within { border-color: var(--c-primary); }
+.footer__newsletter-form:focus-within { border-color: var(--c-secondary-dim); }
 
 .footer__newsletter-input {
   flex: 1;
@@ -1975,23 +1976,23 @@ input, textarea { font-family: inherit; }
   border: none;
   outline: none;
   font-size: 0.8125rem;
-  color: var(--c-on-surface);
+  color: rgba(252,249,248,0.85);
   padding: var(--sp-2) 0;
 }
-.footer__newsletter-input::placeholder { color: var(--c-on-surface-faint); }
+.footer__newsletter-input::placeholder { color: rgba(252,249,248,0.3); }
 
 .footer__newsletter-btn {
-  color: var(--c-primary);
+  color: rgba(252,249,248,0.6);
   display: flex;
   align-items: center;
   transition: transform var(--t-fast), color var(--t-fast);
 }
-.footer__newsletter-btn:hover { transform: translateX(3px); color: var(--c-primary-light); }
+.footer__newsletter-btn:hover { transform: translateX(3px); color: var(--c-secondary-dim); }
 .footer__newsletter-btn .material-symbols-outlined { font-size: 1.25rem; }
 
 .footer__newsletter-success {
   font-size: 0.75rem;
-  color: var(--c-secondary);
+  color: var(--c-secondary-dim);
   margin-top: var(--sp-2);
   min-height: 1.2em;
 }
@@ -2007,7 +2008,7 @@ input, textarea { font-family: inherit; }
   margin-inline: auto;
   padding-inline: var(--sp-12);
   padding-top: var(--sp-10);
-  border-top: 1px solid rgba(75,25,75,0.06);
+  border-top: 1px solid rgba(255,255,255,0.1);
 }
 
 .footer__copy,
@@ -2015,7 +2016,7 @@ input, textarea { font-family: inherit; }
   font-size: 0.6875rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--c-on-surface-faint);
+  color: rgba(252,249,248,0.35);
 }
 
 .footer__legal { display: flex; gap: var(--sp-8); }
@@ -2023,7 +2024,7 @@ input, textarea { font-family: inherit; }
 .footer__legal-link {
   transition: color var(--t-fast);
 }
-.footer__legal-link:hover { color: var(--c-primary); }
+.footer__legal-link:hover { color: var(--c-secondary-dim); }
 
 /* ── TREATMENTS TABS & CAROUSEL (DESKTOP) ───────────────────── */
 .tabs-section { padding-block: var(--sp-24); background: var(--c-surface-low); }
