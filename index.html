@@ -1355,7 +1355,7 @@
               "Desde o primeiro atendimento a equipe foi super atenciosa e acolhedora. A todo momento a Gabi, a Mari, a Fe e toda a equipe estão de prontidão para nos ajudar e acolher. Recomendo a clínica de olhos fechados."
             </blockquote>
             <footer class="review-card__author">
-              <div class="review-card__avatar">L</div>
+              <div class="review-card__avatar" style="background-image: url('COLE_AQUI_FOTO_LETICIA')" aria-label="Leticia Alves dos Santos"></div>
               <div>
                 <p class="review-card__name">Leticia Alves dos Santos</p>
                 <p class="review-card__meta">há 1 semana · Google</p>
@@ -1372,7 +1372,7 @@
               "Fiz o laser íntimo e gostei muito já na primeira sessão, já estou vendo resultado. A Dra. Fernanda deixa super à vontade, é muito respeitosa, não doi, e explica todos os passos com muita clareza."
             </blockquote>
             <footer class="review-card__author">
-              <div class="review-card__avatar review-card__avatar--photo" style="background-image:url('')">M</div>
+              <div class="review-card__avatar" style="background-image: url('COLE_AQUI_FOTO_MARCIA')" aria-label="Marcia Vieira"></div>
               <div>
                 <p class="review-card__name">Marcia Vieira</p>
                 <p class="review-card__meta">há 4 meses · Google</p>
@@ -1389,7 +1389,7 @@
               "Gostei muito do atendimento, começando pelas recepcionistas até a Dra. Fernanda. Tenho muita ansiedade, ela teve paciência, já na segunda sessão já obtive resultado. Super indico para todas, muito mesmo."
             </blockquote>
             <footer class="review-card__author">
-              <div class="review-card__avatar">S</div>
+              <div class="review-card__avatar" style="background-image: url('COLE_AQUI_FOTO_SILVANA')" aria-label="Silvana Libonati"></div>
               <div>
                 <p class="review-card__name">Silvana Libonati</p>
                 <p class="review-card__meta">há 3 meses · Google</p>
@@ -1406,7 +1406,7 @@
               "Minha ginecologista indicou esse tratamento. Houve uma melhora significativa, estou satisfeita. A Fernanda é extremamente cuidadosa e atenciosa — eu super indico."
             </blockquote>
             <footer class="review-card__author">
-              <div class="review-card__avatar review-card__avatar--purple">R</div>
+              <div class="review-card__avatar" style="background-image: url('COLE_AQUI_FOTO_ROSELI')" aria-label="Roseli Silva Ferreira"></div>
               <div>
                 <p class="review-card__name">Roseli Silva Ferreira</p>
                 <p class="review-card__meta">há 3 meses · Google</p>
@@ -1423,7 +1423,7 @@
               "Recomendo o procedimento laser íntimo, deu um resultado muito bom. A clínica tem atendimento excelente, ficamos confortáveis, tudo bom!"
             </blockquote>
             <footer class="review-card__author">
-              <div class="review-card__avatar review-card__avatar--teal">S</div>
+              <div class="review-card__avatar" style="background-image: url('COLE_AQUI_FOTO_SORAIA')" aria-label="Soraia Caram"></div>
               <div>
                 <p class="review-card__name">Soraia Caram</p>
                 <p class="review-card__meta">há 3 meses · Google</p>
@@ -1438,7 +1438,7 @@
               "Desde o primeiro atendimento a equipe foi super atenciosa e acolhedora. A todo momento a Gabi, a Mari, a Fe e toda a equipe estão de prontidão para nos ajudar e acolher. Recomendo a clínica de olhos fechados."
             </blockquote>
             <footer class="review-card__author">
-              <div class="review-card__avatar">L</div>
+              <div class="review-card__avatar" style="background-image: url('COLE_AQUI_FOTO_LETICIA')" aria-label="Leticia Alves dos Santos"></div>
               <div>
                 <p class="review-card__name">Leticia Alves dos Santos</p>
                 <p class="review-card__meta">há 1 semana · Google</p>
@@ -1452,7 +1452,7 @@
               "Fiz o laser íntimo e gostei muito já na primeira sessão, já estou vendo resultado. A Dra. Fernanda deixa super à vontade, é muito respeitosa, não doi, e explica todos os passos com muita clareza."
             </blockquote>
             <footer class="review-card__author">
-              <div class="review-card__avatar">M</div>
+              <div class="review-card__avatar" style="background-image: url('COLE_AQUI_FOTO_MARCIA')" aria-label="Marcia Vieira"></div>
               <div>
                 <p class="review-card__name">Marcia Vieira</p>
                 <p class="review-card__meta">há 4 meses · Google</p>
@@ -1643,29 +1643,47 @@
   <script>
     // ── REVIEWS CAROUSEL ────────────────────────────────────────
     (function () {
-      const track = document.getElementById('reviewsTrack');
-      const dots  = document.querySelectorAll('.reviews__dot');
-      if (!track) return;
+      const wrapper = document.querySelector('.reviews__track-wrapper');
+      const track   = document.getElementById('reviewsTrack');
+      const dots    = document.querySelectorAll('.reviews__dot');
+      if (!track || !wrapper) return;
 
-      const CARDS_VISIBLE = window.innerWidth < 768 ? 1 : window.innerWidth < 1024 ? 2 : 3;
-      const TOTAL_REAL    = 5;
-      let current         = 0;
+      const GAP        = 24; // 1.5rem = var(--sp-6)
+      const TOTAL_REAL = 5;
+      let current      = 0;
       let autoTimer;
+      let cardW        = 0;
 
-      function getCardWidth() {
-        const card = track.querySelector('.review-card');
-        if (!card) return 0;
-        const gap = parseFloat(getComputedStyle(track).gap) || 24;
-        return card.offsetWidth + gap;
+      function visibleCount() {
+        return window.innerWidth < 768 ? 1 : window.innerWidth < 1024 ? 2 : 3;
+      }
+
+      function setCardWidths() {
+        const n = visibleCount();
+        cardW = (wrapper.offsetWidth - GAP * (n - 1)) / n;
+        track.querySelectorAll('.review-card').forEach(c => {
+          c.style.width    = cardW + 'px';
+          c.style.minWidth = cardW + 'px';
+          c.style.maxWidth = cardW + 'px';
+        });
+        // re-snap without animation
+        track.style.transition = 'none';
+        track.style.transform  = `translateX(-${current * (cardW + GAP)}px)`;
+        requestAnimationFrame(() => {
+          track.style.transition = '';
+        });
       }
 
       function goTo(index) {
         current = ((index % TOTAL_REAL) + TOTAL_REAL) % TOTAL_REAL;
-        track.style.transform = `translateX(-${current * getCardWidth()}px)`;
+        track.style.transform = `translateX(-${current * (cardW + GAP)}px)`;
         dots.forEach((d, i) => d.classList.toggle('reviews__dot--active', i === current));
       }
 
       function next() { goTo(current + 1); }
+
+      setCardWidths();
+      window.addEventListener('resize', setCardWidths);
 
       autoTimer = setInterval(next, 4000);
 
@@ -1677,16 +1695,14 @@
         });
       });
 
-      // drag / swipe
       let startX = 0, dragging = false;
-      track.parentElement.addEventListener('mousedown',  e => { startX = e.clientX; dragging = true; });
-      track.parentElement.addEventListener('touchstart', e => { startX = e.touches[0].clientX; dragging = true; }, { passive: true });
-      track.parentElement.addEventListener('mouseup',  e => { if (!dragging) return; dragging = false; if (e.clientX - startX < -40) next(); else if (e.clientX - startX > 40) goTo(current - 1); });
-      track.parentElement.addEventListener('touchend', e => { if (!dragging) return; dragging = false; const dx = e.changedTouches[0].clientX - startX; if (dx < -40) next(); else if (dx > 40) goTo(current - 1); });
+      wrapper.addEventListener('mousedown',  e => { startX = e.clientX; dragging = true; });
+      wrapper.addEventListener('touchstart', e => { startX = e.touches[0].clientX; dragging = true; }, { passive: true });
+      wrapper.addEventListener('mouseup',  e => { if (!dragging) return; dragging = false; if (e.clientX - startX < -40) next(); else if (e.clientX - startX > 40) goTo(current - 1); });
+      wrapper.addEventListener('touchend', e => { if (!dragging) return; dragging = false; const dx = e.changedTouches[0].clientX - startX; if (dx < -40) next(); else if (dx > 40) goTo(current - 1); });
 
-      // pause on hover
-      track.parentElement.addEventListener('mouseenter', () => clearInterval(autoTimer));
-      track.parentElement.addEventListener('mouseleave', () => { autoTimer = setInterval(next, 4000); });
+      wrapper.addEventListener('mouseenter', () => clearInterval(autoTimer));
+      wrapper.addEventListener('mouseleave', () => { autoTimer = setInterval(next, 4000); });
     })();
 
     document.addEventListener("DOMContentLoaded", () => {
