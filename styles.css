@@ -2688,8 +2688,22 @@ input, textarea { font-family: inherit; }
   .testimonials__mark { font-size: 6rem; top: -1.5rem; left: -1rem; }
 
   .sanctuary__media {
-    max-height: 400px;
-    overflow: hidden;
+    width: 100%;
+  }
+  /* mobile: show only first image from col-a, hide everything else */
+  .sanctuary__col--b { display: none; }
+  .sanctuary__col--a {
+    display: block;
+    width: 100%;
+  }
+  .sanctuary__col--a .sanctuary__img--sq { display: none; }
+  .sanctuary__col--a .sanctuary__img--tall {
+    width: 100%;
+    height: 260px;
+    aspect-ratio: unset;
+    object-fit: cover;
+    border-radius: var(--r-2xl);
+    transform: none !important;
   }
 
   .visit__map { min-height: 300px; }
