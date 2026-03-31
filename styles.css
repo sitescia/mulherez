@@ -2710,16 +2710,42 @@ input, textarea { font-family: inherit; }
   .footer__legal { flex-wrap: wrap; justify-content: center; gap: var(--sp-4); }
 
   .soft-cta-box {
-    padding: var(--sp-10) var(--sp-6);
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    gap: var(--sp-5);
+    padding: var(--sp-5) var(--sp-6);
     border-radius: var(--r-xl);
+    max-width: 100%;
   }
+  .soft-cta-box::before { display: none; }
   .soft-cta-title {
-    font-size: 1.75rem;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--c-on-surface);
+    line-height: 1.4;
+    flex: 1;
+    font-family: var(--font-sans);
   }
   .soft-cta-btn {
-    width: 100%;
-    justify-content: center;
-    padding: 1rem 1.5rem;
+    flex-shrink: 0;
+    width: auto;
+    padding: 0.55rem 1.1rem;
+    font-size: 0.8125rem;
+    gap: 6px;
+    box-shadow: none;
+    border: 1.5px solid rgba(75,25,75,0.15);
+    background: transparent;
+    color: var(--c-primary);
+    font-weight: 600;
+  }
+  .soft-cta-btn:hover {
+    background: var(--c-primary);
+    color: var(--c-white);
+    border-color: var(--c-primary);
+    transform: none;
+    box-shadow: none;
   }
 }
 
