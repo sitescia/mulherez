@@ -19,6 +19,71 @@
 
   <!-- Styles -->
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Navbar Desktop Purple Theme Override */
+    .nav {
+      background: var(--c-primary) !important;
+    }
+
+    .nav.scrolled {
+      background: rgba(75, 25, 75, 0.95) !important;
+      backdrop-filter: blur(24px) !important;
+      -webkit-backdrop-filter: blur(24px) !important;
+      box-shadow: 0 4px 32px rgba(0, 0, 0, 0.2) !important;
+    }
+
+    .nav__link {
+      color: rgba(255, 255, 255, 0.7) !important;
+    }
+
+    .nav__link:hover,
+    .nav__link--active {
+      color: var(--c-white) !important;
+    }
+
+    .nav__link::after {
+      background: var(--c-white) !important;
+    }
+
+    .nav__burger span {
+      background: var(--c-white) !important;
+    }
+
+    .btn-nav-whatsapp {
+      background: var(--c-white) !important;
+      color: var(--c-primary) !important;
+      font-weight: 600 !important;
+    }
+
+    .btn-nav-whatsapp:hover {
+      background: rgba(255, 255, 255, 0.9) !important;
+      box-shadow: 0 4px 16px rgba(255, 255, 255, 0.25) !important;
+      transform: translateY(-2px);
+    }
+
+    .subtle-card-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--c-primary);
+      text-decoration: none;
+      opacity: 0.7;
+      transition: opacity 0.3s ease;
+      margin-top: 1rem;
+    }
+    .subtle-card-cta:hover {
+      opacity: 1;
+    }
+    .subtle-card-cta .material-symbols-outlined {
+      font-size: 1.1rem;
+      transition: transform 0.3s ease;
+    }
+    .subtle-card-cta:hover .material-symbols-outlined {
+      transform: translateX(4px);
+    }
+  </style>
 </head>
 
 <body>
@@ -46,17 +111,20 @@
   ══════════════════════════════════════════ -->
   <nav class="nav" id="nav">
     <div class="nav__inner">
-      <a href="#" class="nav__brand">Mulherez</a>
+      <a href="#" class="nav__brand">
+        <!-- Cole o link da sua logo real no 'src' abaixo -->
+        <img src="https://via.placeholder.com/150x40.png?text=SEU+LOGO+AQUI" alt="Logo Clínica"
+          style="height: 32px; width: auto; display: block;" />
+      </a>
 
       <div class="nav__links" id="navLinks">
-        <a href="#treatments" class="nav__link nav__link--active">Tratamentos</a>
-        <a href="#atelier" class="nav__link">O Atelier</a>
-        <a href="#team" class="nav__link">Equipe Clínica</a>
-        <a href="#wellness" class="nav__link">Bem-Estar</a>
-        <a href="#journal" class="nav__link">Contato</a>
+        <a href="#results" class="nav__link nav__link--active">Ninfoplastia</a>
+        <a href="#blefaroplastia" class="nav__link">Blefaroplastia</a>
+        <a href="#laser-intimo" class="nav__link">Laser Íntimo</a>
+        <a href="#team" class="nav__link">Equipe Médica</a>
       </div>
 
-      <button class="btn btn--primary btn--sm nav-cta" data-magnetic>
+      <button class="btn btn-nav-whatsapp btn--sm nav-cta" data-magnetic>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="14" height="14"
           aria-hidden="true" style="flex-shrink:0">
           <path
@@ -74,12 +142,11 @@
   <!-- Mobile Menu -->
   <div class="mob-menu" id="mobMenu" aria-hidden="true">
     <div class="mob-menu__inner">
-      <a href="#treatments" class="mob-menu__link">Tratamentos</a>
-      <a href="#atelier" class="mob-menu__link">O Atelier</a>
-      <a href="#team" class="mob-menu__link">Equipe Clínica</a>
-      <a href="#wellness" class="mob-menu__link">Bem-Estar</a>
-      <a href="#journal" class="mob-menu__link">Contato</a>
-      <button class="btn btn--primary btn--full">
+      <a href="#results" class="mob-menu__link">Ninfoplastia</a>
+      <a href="#blefaroplastia" class="mob-menu__link">Blefaroplastia</a>
+      <a href="#laser-intimo" class="mob-menu__link">Laser Íntimo</a>
+      <a href="#team" class="mob-menu__link">Equipe Médica</a>
+      <button class="btn btn-nav-whatsapp btn--full">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="14" height="14"
           aria-hidden="true" style="flex-shrink:0">
           <path
@@ -122,7 +189,7 @@
       <div class="hero__layout">
         <div class="hero__body">
 
-          <span class="eyebrow hero__eyebrow" data-reveal data-delay="0">Resultados Naturais</span>
+          <span class="eyebrow hero__eyebrow" data-reveal data-delay="0">A primeira do Brasil</span>
 
           <h1 class="hero__title" data-reveal data-delay="120">
             Estética
@@ -224,23 +291,33 @@
               <!-- Left: Progress List -->
               <div class="stepper-menu">
                 <button class="stepper-btn active" data-index="0">
-                  <div class="stepper-progress"><div class="stepper-bar"></div></div>
+                  <div class="stepper-progress">
+                    <div class="stepper-bar"></div>
+                  </div>
                   <span class="stepper-title">Laser íntimo</span>
                 </button>
                 <button class="stepper-btn" data-index="1">
-                  <div class="stepper-progress"><div class="stepper-bar"></div></div>
+                  <div class="stepper-progress">
+                    <div class="stepper-bar"></div>
+                  </div>
                   <span class="stepper-title">Peeling íntimo</span>
                 </button>
                 <button class="stepper-btn" data-index="2">
-                  <div class="stepper-progress"><div class="stepper-bar"></div></div>
+                  <div class="stepper-progress">
+                    <div class="stepper-bar"></div>
+                  </div>
                   <span class="stepper-title">Preenchimento íntimo</span>
                 </button>
                 <button class="stepper-btn" data-index="3">
-                  <div class="stepper-progress"><div class="stepper-bar"></div></div>
+                  <div class="stepper-progress">
+                    <div class="stepper-bar"></div>
+                  </div>
                   <span class="stepper-title">Bioestimuladores</span>
                 </button>
                 <button class="stepper-btn" data-index="4">
-                  <div class="stepper-progress"><div class="stepper-bar"></div></div>
+                  <div class="stepper-progress">
+                    <div class="stepper-bar"></div>
+                  </div>
                   <span class="stepper-title">Fios de PDO</span>
                 </button>
               </div>
@@ -248,35 +325,45 @@
               <!-- Right: Visual Cards -->
               <div class="stepper-content">
                 <div class="stepper-card active">
-                  <div class="stepper-card__img"><img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=600&q=80" alt="Laser íntimo" loading="lazy"></div>
+                  <div class="stepper-card__img"><img
+                      src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=600&q=80"
+                      alt="Laser íntimo" loading="lazy"></div>
                   <div class="stepper-card__info">
                     <h4>Laser íntimo</h4>
                     <p>Rejuvenescimento não cirúrgico</p>
                   </div>
                 </div>
                 <div class="stepper-card">
-                  <div class="stepper-card__img"><img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=600&q=80" alt="Peeling íntimo" loading="lazy"></div>
+                  <div class="stepper-card__img"><img
+                      src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=600&q=80"
+                      alt="Peeling íntimo" loading="lazy"></div>
                   <div class="stepper-card__info">
                     <h4>Peeling íntimo</h4>
                     <p>Clareamento e renovação celular</p>
                   </div>
                 </div>
                 <div class="stepper-card">
-                  <div class="stepper-card__img"><img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=600&q=80" alt="Preenchimento íntimo" loading="lazy"></div>
+                  <div class="stepper-card__img"><img
+                      src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=600&q=80"
+                      alt="Preenchimento íntimo" loading="lazy"></div>
                   <div class="stepper-card__info">
                     <h4>Preenchimento íntimo</h4>
                     <p>Restauração de volume e estética</p>
                   </div>
                 </div>
                 <div class="stepper-card">
-                  <div class="stepper-card__img"><img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=600&q=80" alt="Bioestimuladores" loading="lazy"></div>
+                  <div class="stepper-card__img"><img
+                      src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=600&q=80"
+                      alt="Bioestimuladores" loading="lazy"></div>
                   <div class="stepper-card__info">
                     <h4>Bioestimuladores</h4>
                     <p>Estímulo de colágeno natural</p>
                   </div>
                 </div>
                 <div class="stepper-card">
-                  <div class="stepper-card__img"><img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=600&q=80" alt="Fios de PDO" loading="lazy"></div>
+                  <div class="stepper-card__img"><img
+                      src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=600&q=80"
+                      alt="Fios de PDO" loading="lazy"></div>
                   <div class="stepper-card__info">
                     <h4>Fios de PDO</h4>
                     <p>Sustentação e firmeza dos tecidos</p>
@@ -292,23 +379,33 @@
               <!-- Left: Progress List -->
               <div class="stepper-menu">
                 <button class="stepper-btn active" data-index="0">
-                  <div class="stepper-progress"><div class="stepper-bar"></div></div>
+                  <div class="stepper-progress">
+                    <div class="stepper-bar"></div>
+                  </div>
                   <span class="stepper-title">Blefaroplastia a laser</span>
                 </button>
                 <button class="stepper-btn" data-index="1">
-                  <div class="stepper-progress"><div class="stepper-bar"></div></div>
+                  <div class="stepper-progress">
+                    <div class="stepper-bar"></div>
+                  </div>
                   <span class="stepper-title">Toxina botulínica</span>
                 </button>
                 <button class="stepper-btn" data-index="2">
-                  <div class="stepper-progress"><div class="stepper-bar"></div></div>
+                  <div class="stepper-progress">
+                    <div class="stepper-bar"></div>
+                  </div>
                   <span class="stepper-title">Preenchimento facial</span>
                 </button>
                 <button class="stepper-btn" data-index="3">
-                  <div class="stepper-progress"><div class="stepper-bar"></div></div>
+                  <div class="stepper-progress">
+                    <div class="stepper-bar"></div>
+                  </div>
                   <span class="stepper-title">Bioestimuladores</span>
                 </button>
                 <button class="stepper-btn" data-index="4">
-                  <div class="stepper-progress"><div class="stepper-bar"></div></div>
+                  <div class="stepper-progress">
+                    <div class="stepper-bar"></div>
+                  </div>
                   <span class="stepper-title">Fios de sustentação</span>
                 </button>
               </div>
@@ -316,35 +413,45 @@
               <!-- Right: Visual Cards -->
               <div class="stepper-content">
                 <div class="stepper-card active">
-                  <div class="stepper-card__img"><img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=600&q=80" alt="Blefaroplastia a laser" loading="lazy"></div>
+                  <div class="stepper-card__img"><img
+                      src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=600&q=80"
+                      alt="Blefaroplastia a laser" loading="lazy"></div>
                   <div class="stepper-card__info">
                     <h4>Blefaroplastia a laser</h4>
                     <p>Rejuvenescimento do olhar</p>
                   </div>
                 </div>
                 <div class="stepper-card">
-                  <div class="stepper-card__img"><img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=600&q=80" alt="Toxina botulínica" loading="lazy"></div>
+                  <div class="stepper-card__img"><img
+                      src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=600&q=80"
+                      alt="Toxina botulínica" loading="lazy"></div>
                   <div class="stepper-card__info">
                     <h4>Toxina botulínica</h4>
                     <p>Suavização de rugas dinâmicas</p>
                   </div>
                 </div>
                 <div class="stepper-card">
-                  <div class="stepper-card__img"><img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=600&q=80" alt="Preenchimento facial" loading="lazy"></div>
+                  <div class="stepper-card__img"><img
+                      src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=600&q=80"
+                      alt="Preenchimento facial" loading="lazy"></div>
                   <div class="stepper-card__info">
                     <h4>Preenchimento facial</h4>
                     <p>Harmonização de contornos</p>
                   </div>
                 </div>
                 <div class="stepper-card">
-                  <div class="stepper-card__img"><img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=600&q=80" alt="Bioestimuladores" loading="lazy"></div>
+                  <div class="stepper-card__img"><img
+                      src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=600&q=80"
+                      alt="Bioestimuladores" loading="lazy"></div>
                   <div class="stepper-card__info">
                     <h4>Bioestimuladores</h4>
                     <p>Firmeza e qualidade da pele</p>
                   </div>
                 </div>
                 <div class="stepper-card">
-                  <div class="stepper-card__img"><img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=600&q=80" alt="Fios de sustentação" loading="lazy"></div>
+                  <div class="stepper-card__img"><img
+                      src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=600&q=80"
+                      alt="Fios de sustentação" loading="lazy"></div>
                   <div class="stepper-card__info">
                     <h4>Fios de sustentação</h4>
                     <p>Lifting facial não cirúrgico</p>
@@ -360,23 +467,33 @@
               <!-- Left: Progress List -->
               <div class="stepper-menu">
                 <button class="stepper-btn active" data-index="0">
-                  <div class="stepper-progress"><div class="stepper-bar"></div></div>
+                  <div class="stepper-progress">
+                    <div class="stepper-bar"></div>
+                  </div>
                   <span class="stepper-title">Bioestimuladores</span>
                 </button>
                 <button class="stepper-btn" data-index="1">
-                  <div class="stepper-progress"><div class="stepper-bar"></div></div>
+                  <div class="stepper-progress">
+                    <div class="stepper-bar"></div>
+                  </div>
                   <span class="stepper-title">Preenchimento de glúteo</span>
                 </button>
                 <button class="stepper-btn" data-index="2">
-                  <div class="stepper-progress"><div class="stepper-bar"></div></div>
+                  <div class="stepper-progress">
+                    <div class="stepper-bar"></div>
+                  </div>
                   <span class="stepper-title">Enzimas</span>
                 </button>
                 <button class="stepper-btn" data-index="3">
-                  <div class="stepper-progress"><div class="stepper-bar"></div></div>
+                  <div class="stepper-progress">
+                    <div class="stepper-bar"></div>
+                  </div>
                   <span class="stepper-title">Carboxiterapia</span>
                 </button>
                 <button class="stepper-btn" data-index="4">
-                  <div class="stepper-progress"><div class="stepper-bar"></div></div>
+                  <div class="stepper-progress">
+                    <div class="stepper-bar"></div>
+                  </div>
                   <span class="stepper-title">Radiofrequência</span>
                 </button>
               </div>
@@ -384,35 +501,45 @@
               <!-- Right: Visual Cards -->
               <div class="stepper-content">
                 <div class="stepper-card active">
-                  <div class="stepper-card__img"><img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=600&q=80" alt="Bioestimuladores" loading="lazy"></div>
+                  <div class="stepper-card__img"><img
+                      src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=600&q=80"
+                      alt="Bioestimuladores" loading="lazy"></div>
                   <div class="stepper-card__info">
                     <h4>Bioestimuladores</h4>
                     <p>Combate à flacidez corporal</p>
                   </div>
                 </div>
                 <div class="stepper-card">
-                  <div class="stepper-card__img"><img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=600&q=80" alt="Preenchimento de glúteo" loading="lazy"></div>
+                  <div class="stepper-card__img"><img
+                      src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=600&q=80"
+                      alt="Preenchimento de glúteo" loading="lazy"></div>
                   <div class="stepper-card__info">
                     <h4>Preenchimento de glúteo</h4>
                     <p>Remodelação e volume glúteo</p>
                   </div>
                 </div>
                 <div class="stepper-card">
-                  <div class="stepper-card__img"><img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=600&q=80" alt="Enzimas" loading="lazy"></div>
+                  <div class="stepper-card__img"><img
+                      src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=600&q=80"
+                      alt="Enzimas" loading="lazy"></div>
                   <div class="stepper-card__info">
                     <h4>Enzimas</h4>
                     <p>Tratamento para gordura localizada</p>
                   </div>
                 </div>
                 <div class="stepper-card">
-                  <div class="stepper-card__img"><img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=600&q=80" alt="Carboxiterapia" loading="lazy"></div>
+                  <div class="stepper-card__img"><img
+                      src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=600&q=80"
+                      alt="Carboxiterapia" loading="lazy"></div>
                   <div class="stepper-card__info">
                     <h4>Carboxiterapia</h4>
                     <p>Redução de celulite e estrias</p>
                   </div>
                 </div>
                 <div class="stepper-card">
-                  <div class="stepper-card__img"><img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=600&q=80" alt="Radiofrequência" loading="lazy"></div>
+                  <div class="stepper-card__img"><img
+                      src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=600&q=80"
+                      alt="Radiofrequência" loading="lazy"></div>
                   <div class="stepper-card__info">
                     <h4>Radiofrequência</h4>
                     <p>Firmeza e contorno corporal</p>
@@ -511,7 +638,7 @@
       <div class="section-header" data-reveal="up">
         <div>
           <span class="eyebrow">O Portfólio de Tratamentos</span>
-          <h2 class="section-title">Intervenções Médicas<br>Selecionadas</h2>
+          <h2 class="section-title">Procedimentos Estéticos<br>Selecionados</h2>
         </div>
         <p class="section-note">
           Cada procedimento é um diálogo entre a necessidade clínica e a aspiração estética.
@@ -528,10 +655,15 @@
             <div class="card__veil"></div>
           </div>
           <div class="card__body">
-            <span class="tag">Facial</span>
-            <h4 class="card__title">Contorno Estrutural</h4>
+            <span class="tag">Íntima</span>
+            <h4 class="card__title">Ninfoplastia a Laser</h4>
             <p class="card__text">Restaurando as proporções douradas da silhueta feminina por meio de microajustes
               precisos.</p>
+            <div style="display: flex; justify-content: flex-end;">
+              <a href="#results" class="subtle-card-cta">
+                Saber mais <span class="material-symbols-outlined">arrow_forward</span>
+              </a>
+            </div>
           </div>
         </div>
 
@@ -543,9 +675,14 @@
             <div class="card__veil"></div>
           </div>
           <div class="card__body">
-            <span class="tag">Dérmico</span>
-            <h4 class="card__title">Resurfacing Luminoso</h4>
+            <span class="tag">Facial</span>
+            <h4 class="card__title">Blefaroplastia a Laser</h4>
             <p class="card__text">Utilizando protocolos avançados de laser para revelar o brilho natural da pele.</p>
+            <div style="display: flex; justify-content: flex-end;">
+              <a href="#blefaroplastia" class="subtle-card-cta">
+                Saber mais <span class="material-symbols-outlined">arrow_forward</span>
+              </a>
+            </div>
           </div>
         </div>
 
@@ -557,9 +694,14 @@
             <div class="card__veil"></div>
           </div>
           <div class="card__body">
-            <span class="tag">Longevidade</span>
-            <h4 class="card__title">O Ritual Celular</h4>
+            <span class="tag">Íntima</span>
+            <h4 class="card__title">Laser Íntimo</h4>
             <p class="card__text">Medicina regenerativa focada na saúde celular e na vitalidade a longo prazo.</p>
+            <div style="display: flex; justify-content: flex-end;">
+              <a href="#laser-intimo" class="subtle-card-cta">
+                Saber mais <span class="material-symbols-outlined">arrow_forward</span>
+              </a>
+            </div>
           </div>
         </div>
 
@@ -568,69 +710,161 @@
   </section>
 
   <!-- ══════════════════════════════════════════
-       BEFORE & AFTER
+       NINFOPLASTIA A LASER
   ══════════════════════════════════════════ -->
   <section class="section ba-section" id="results">
+    <style>
+      .premium-glass-card {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: var(--r-2xl);
+        overflow: hidden;
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+        transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.4s ease;
+      }
+
+      .premium-glass-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 48px rgba(0, 0, 0, 0.3);
+        border-color: rgba(255, 255, 255, 0.15);
+      }
+
+      .premium-glass-card .img-wrap {
+        overflow: hidden;
+        aspect-ratio: 4/3;
+      }
+
+      .premium-glass-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      .premium-glass-card:hover img {
+        transform: scale(1.05);
+      }
+
+      .btn-glow {
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: 600;
+        background: var(--c-white);
+        color: var(--c-primary);
+        border: none;
+      }
+
+      .btn-glow::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.7), transparent);
+        transform: skewX(-20deg);
+        z-index: -1;
+        transition: left 0.7s ease;
+      }
+
+      .btn-glow:hover {
+        box-shadow: 0 0 28px rgba(255, 255, 255, 0.5);
+        transform: translateY(-2px);
+      }
+
+      .btn-glow:hover::before {
+        left: 200%;
+      }
+    </style>
     <div class="container">
 
       <div class="ba-head" data-reveal="up">
-        <h2 class="ba-title">Transformações Sutis. <em>Impacto Significativo.</em></h2>
-        <p class="ba-desc">Nossos resultados são medidos não pelo que se vê, mas pela confiança que emana de dentro.
-          Observe o poder da precisão.</p>
+        <span class="eyebrow eyebrow--light" style="margin-bottom: var(--sp-4); display: inline-block;">Ninfoplastia a
+          Laser</span>
+        <h2 class="ba-title">Sinta-se confortável com seu corpo <em>novamente</em></h2>
+        <p class="ba-desc">Se você sente desconforto ou insegurança na intimidade, a ninfoplastia à laser pode trazer
+          mais conforto e harmonia de forma personalizada!</p>
       </div>
 
-      <div class="ba-layout">
+      <div class="ba-layout" style="align-items: center;">
 
-        <!-- Interactive before/after slider -->
-        <div class="ba-slider-wrap" data-reveal="left">
-          <div class="ba-slider" id="baSlider" role="slider" aria-label="Comparação antes e depois" aria-valuemin="0"
-            aria-valuemax="100" aria-valuenow="50">
-            <!-- Before image (base) -->
+        <!-- Card: Image + Paragraph -->
+        <div class="ba-media-wrap premium-glass-card" data-reveal="left">
+          <div class="img-wrap">
             <img
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuApoKhm85Rz3LZKsfY85Y0HHDEcaI-tClryI0XeFOpgoZITHkUuEbpqVxbhGgyKp6ovCbPj8L1mtO8fHkYOL9pH05WWAo7QrnT9gN0UcggJPC2_uok_HTdYoc0P8zXW5bMHrbMiKC5beO9iepq4ZofL390Wt3MCtUUCMQGxfiThudQK4mDu3-8vr9DctCSmRVCyENUcLnHIIKQLFr14GoQ2l2onOEwtizfQk6lb5OFYp_THvDxDYFhaO-xuw-rFk2aAEV1H341zn-c"
-              alt="Antes — Base" class="ba-slider__before" />
-
-            <!-- After image (clipped) -->
-            <div class="ba-slider__after" id="baAfter">
-              <img
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-3ehcXpSsH2FbenPyftdpDE68HVgS543PqZmPnhRQwSBFyC0xqfWMklNMoCPsEhM3d02EPD2uCpQjDBe42By_0tPVVKgxX13HG5L4Ay3vloYdh9xio0cXyO_Hnsh9xOYq6dpyuytefo4RHKivIXUj66JwjCUGL1m14NducRCqDEQzeJ1iTNDqL5lg1ttYDB_OoeN7Pu2Z00tKTdQrSUMFqmfxNmzrm89e4ngBrssSp-Ht89Eozuos9_fi35kQnJmrQtRWreUS6pA"
-                alt="Depois — Pós-Atelier" class="ba-slider__after-img" />
-            </div>
-
-            <!-- Drag handle -->
-            <div class="ba-slider__handle" id="baHandle">
-              <div class="ba-slider__line"></div>
-              <button class="ba-slider__btn" aria-label="Arraste para comparar">
-                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
-                  <path d="M8 5L2 11L8 17M14 5L20 11L14 17" stroke="currentColor" stroke-width="1.5"
-                    stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </button>
-            </div>
-
-            <span class="ba-label ba-label--left">Antes</span>
-            <span class="ba-label ba-label--right">Pós-Atelier</span>
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgiQU21klPtvwu60-GAFS-ReUn9Bd9dNTRWCT5gAxjgQkTcFBOftN8hGJi8EF2O0xXQ9Xm40THIBTQyDJFKwMBT8d0mCLCF6crmYbi7vSfFFwUz1mwn3T-nXzb7GfqEZbsycevlNaiLVuzx2DKN3OIWpzHK-am1Y8FhsNiCz4b-50fWFuqZu1QBQTKsihk1vMdZsZ80s00gyyDv4HEsb5hO5KZQL-XqpaTlbk1KDrfL5mT3L6Ys_1-wnr4klck76mAqb3msZfPdT8"
+              alt="Ninfoplastia a Laser" loading="lazy" />
+          </div>
+          <div style="padding: 2.5rem 2rem;">
+            <p style="font-size: 0.95rem; color: rgba(252,249,248,0.7); line-height: 1.7; margin: 0;">
+              A ninfoplastia a laser é um procedimento cirúrgico que reduz o excesso dos pequenos lábios vaginais,
+              ajudando a melhorar tanto o conforto no dia a dia quanto a estética da região íntima. Utilizando
+              tecnologia a laser, o procedimento permite mais precisão, menor trauma na região e uma recuperação mais
+              tranquila, sempre com planejamento individualizado para respeitar a anatomia de cada paciente.
+            </p>
           </div>
         </div>
 
         <!-- Info panel -->
-        <div class="ba-info" data-reveal="right">
+        <div class="ba-info" data-reveal="right" style="justify-content: center;">
+
+          <a href="#" class="ba-cta"
+            onclick="event.preventDefault(); alert('Abre um pop up para assistir a um vídeo que explica sobre o procedimento e recuperação')"
+            style="margin-bottom: 2.5rem; width: fit-content;">
+            Saber mais sobre o procedimento
+            <span class="material-symbols-outlined" aria-hidden="true" style="margin-left: 2px;">play_circle</span>
+          </a>
+
+          <div class="ba-protocol" style="margin-bottom: 2rem;">
+            <h4 class="ba-protocol__title">Benefícios</h4>
+            <ul
+              style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: var(--sp-4);">
+              <li
+                style="display: flex; align-items: center; gap: var(--sp-3); font-size: 0.95rem; font-weight: 500; color: rgba(252,249,248,0.9);">
+                <span class="material-symbols-outlined" style="color: var(--c-secondary);"
+                  aria-hidden="true">verified</span>
+                Mais conforto no dia a dia
+              </li>
+              <li
+                style="display: flex; align-items: center; gap: var(--sp-3); font-size: 0.95rem; font-weight: 500; color: rgba(252,249,248,0.9);">
+                <span class="material-symbols-outlined" style="color: var(--c-secondary);"
+                  aria-hidden="true">verified</span>
+                Mais segurança na intimidade
+              </li>
+              <li
+                style="display: flex; align-items: center; gap: var(--sp-3); font-size: 0.95rem; font-weight: 500; color: rgba(252,249,248,0.9);">
+                <span class="material-symbols-outlined" style="color: var(--c-secondary);"
+                  aria-hidden="true">verified</span>
+                Resultado natural
+              </li>
+            </ul>
+          </div>
+
           <div class="ba-protocol">
-            <h4 class="ba-protocol__title">Protocolo: O Lifting Esculpido</h4>
-            <p class="ba-protocol__text">
-              Uma combinação de aplicação estratégica de ácido hialurônico e ultrassom microfocalizado
-              para redefinir o terço inferior do rosto.
+            <h4 class="ba-protocol__title"
+              style="text-transform: uppercase; font-size: 0.875rem; letter-spacing: 0.05em; margin-bottom: 0.5rem; opacity: 0.8;">
+              Segurança</h4>
+            <p class="ba-protocol__text" style="font-size: 0.9rem;">
+              Procedimento cirúrgico realizado por médicos capacitados e treinados pela rede Mulherez.
             </p>
           </div>
-          <div class="ba-tags">
-            <span class="ba-tag">Sem Cirurgia</span>
-            <span class="ba-tag">Sem Recuperação</span>
-            <span class="ba-tag">Revisão em 6 Meses</span>
+
+          <div style="margin-top: 3rem;">
+            <a href="https://wa.me/5511999999999" target="_blank" class="btn btn--primary btn--lg btn-glow"
+              data-magnetic>
+              Quero me sentir mais confortável
+              <span class="material-symbols-outlined" aria-hidden="true" style="font-size: 18px;">arrow_forward</span>
+            </a>
           </div>
-          <a href="#" class="ba-cta">
-            Ver Estudo de Caso Completo
-            <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
-          </a>
+
         </div>
 
       </div>
@@ -638,37 +872,392 @@
   </section>
 
   <!-- ══════════════════════════════════════════
-       REVIEWS / TESTIMONIALS
+       BLEFAROPLASTIA A LASER
   ══════════════════════════════════════════ -->
-  <section class="section testimonials" id="testimonials">
+  <section class="section blefaro-section" id="blefaroplastia" style="background: var(--c-surface-low);">
+    <style>
+      .premium-light-card {
+        background: var(--c-surface);
+        border-radius: var(--r-2xl);
+        overflow: hidden;
+        box-shadow: 0 12px 32px rgba(75, 25, 75, 0.05);
+        transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
+        border: 1px solid rgba(75, 25, 75, 0.04);
+      }
+
+      .premium-light-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 48px rgba(75, 25, 75, 0.1);
+      }
+
+      .premium-light-card .img-wrap {
+        overflow: hidden;
+        aspect-ratio: 4/3;
+      }
+
+      .premium-light-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      .premium-light-card:hover img {
+        transform: scale(1.05);
+      }
+
+      .btn-glow-dark {
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: 600;
+        background: var(--c-primary);
+        color: var(--c-white);
+        border: none;
+      }
+
+      .btn-glow-dark::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+        transform: skewX(-20deg);
+        z-index: -1;
+        transition: left 0.7s ease;
+      }
+
+      .btn-glow-dark:hover {
+        box-shadow: 0 0 24px rgba(75, 25, 75, 0.25);
+        transform: translateY(-2px);
+      }
+
+      .btn-glow-dark:hover::before {
+        left: 200%;
+      }
+
+      .blefaro-carousel {
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+        padding-block: var(--sp-6);
+      }
+
+      .blefaro-carousel::before,
+      .blefaro-carousel::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 5%;
+        z-index: 2;
+        pointer-events: none;
+      }
+
+      .blefaro-carousel::before {
+        left: 0;
+        background: linear-gradient(to right, var(--c-surface-low), transparent);
+      }
+
+      .blefaro-carousel::after {
+        right: 0;
+        background: linear-gradient(to left, var(--c-surface-low), transparent);
+      }
+
+      .blefaro-carousel__track {
+        display: flex;
+        gap: 1.5rem;
+        width: max-content;
+        animation: scrollMarquee 30s linear infinite;
+      }
+
+      .blefaro-carousel:hover .blefaro-carousel__track {
+        animation-play-state: paused;
+      }
+
+      .blefaro-carousel__slide {
+        width: 280px;
+        aspect-ratio: 9/16;
+        border-radius: var(--r-xl);
+        overflow: hidden;
+        flex-shrink: 0;
+        box-shadow: 0 12px 24px rgba(75, 25, 75, 0.1);
+        transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      .blefaro-carousel__slide:hover {
+        transform: scale(1.02);
+      }
+
+      .blefaro-carousel__slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      @keyframes scrollMarquee {
+        0% {
+          transform: translateX(0);
+        }
+
+        100% {
+          transform: translateX(calc(-50% - 0.75rem));
+        }
+      }
+
+      @media (max-width: 768px) {
+        .blefaro-carousel__slide {
+          width: 200px;
+        }
+      }
+    </style>
     <div class="container">
-      <div class="testimonials__layout">
 
-        <div class="testimonials__content" data-reveal="up">
-          <div class="testimonials__mark" aria-hidden="true">"</div>
-          <h2 class="testimonials__heading">A Experiência<br>Mulherez</h2>
+      <div class="ba-head" data-reveal="up" style="margin-bottom: var(--sp-16);">
+        <span class="eyebrow" style="margin-bottom: var(--sp-4); display: inline-block;">Blefaroplastia a Laser</span>
+        <h2 class="ba-title" style="color: var(--c-primary);">Pare de parecer cansada mesmo <em>quando você não
+            está!</em></h2>
+        <p class="ba-desc" style="color: var(--c-on-surface-muted);">A blefaroplastia a laser remove o excesso de pele
+          das pálpebras, devolvendo leveza ao olhar.</p>
+      </div>
 
-          <!-- Carousel -->
-          <div class="testi-carousel" id="testiCarousel" aria-live="polite">
-            <!-- Items injected by JS -->
+      <div class="ba-layout" style="align-items: center; margin-bottom: var(--sp-24);">
+
+        <!-- Card: Image + Paragraph -->
+        <div class="ba-media-wrap premium-light-card" data-reveal="left">
+          <div class="img-wrap">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkH26ww15ZI9Ej1k-47LVHbcyWsdwI1KGApVdRQvH1Ht63xnvjLyFO2EhYC_ciBMNjSLzlKQCtQ5B9c1MefKG8ZN4xaOQDuip_AVb1ako0DB_pKPV9ne387fG8qxXJkq-2pmp66qB9UELuoU1fy22plycZNn72SRJMLoEr57xzFyekGp-BYTebdD-wCoAaZJaL7Y-nYyZZqHPpU-49kUGBhHfFak2eVctxiJayEXiUwRJ5KltjaeanpJPVOTjU-5l6M8Dxw3xAaqs"
+              alt="Blefaroplastia a Laser" loading="lazy" />
           </div>
-
-          <div class="testimonials__controls">
-            <button class="testi-arrow" id="testiPrev" aria-label="Depoimento anterior">
-              <span class="material-symbols-outlined">chevron_left</span>
-            </button>
-            <div class="testi-dots" id="testiDots" role="tablist" aria-label="Navegação de depoimentos"></div>
-            <button class="testi-arrow" id="testiNext" aria-label="Próximo depoimento">
-              <span class="material-symbols-outlined">chevron_right</span>
-            </button>
+          <div style="padding: 2.5rem 2rem;">
+            <p style="font-size: 0.95rem; color: var(--c-on-surface-muted); line-height: 1.7; margin: 0;">
+              A blefaroplastia a laser é uma cirurgia indicada para remover o excesso de pele das pálpebras superiores
+              e/ou inferiores, que pode causar aparência de cansaço ou envelhecimento. Com o uso do laser, o
+              procedimento é realizado com mais precisão e controle, proporcionando um resultado mais leve, natural e
+              harmônico, sem alterar as características do seu rosto.
+            </p>
           </div>
         </div>
 
-        <div class="testimonials__visual" data-reveal="right">
-          <img
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-75P6ErW5dWi8aO1YQ76AVnFT18gHYL5acwBl67K7Z_V__sUwSBoKZgaa_pS9vpDfbLn4ZzQA2ITlBMrxL871dU86OsHDN5kPyeaiMF_2drMm3Ay32gEC9kNoPmRTnSB-vOfFu5SIttere4EPCZXqqim8TmR25k21Z1tkkAmcSyUQT1Kzi518W3Rg5LGtQNLtgiZhrKQXyDlCCASUeFYtNdFTg2LF1r8YMQ3evEUVs2dilNRvZAvLcHCKTYsG9pGeW2tkkznw0VU"
-            alt="Luxury Mulherez clinic interior" class="testimonials__img" loading="lazy" />
-          <div class="testimonials__glow" aria-hidden="true"></div>
+        <!-- Info panel -->
+        <div class="ba-info" data-reveal="right" style="justify-content: center;">
+
+          <a href="#" class="ba-cta"
+            onclick="event.preventDefault(); alert('Abre um pop up para assistir a um vídeo que explica sobre o procedimento e recuperação')"
+            style="margin-bottom: 2.5rem; width: fit-content; color: var(--c-primary); border-bottom-color: rgba(75, 25, 75, 0.3);">
+            Saber mais sobre o procedimento
+            <span class="material-symbols-outlined" aria-hidden="true" style="margin-left: 2px;">play_circle</span>
+          </a>
+
+          <div class="ba-protocol" style="margin-bottom: 2rem; border-left-color: var(--c-secondary);">
+            <h4 class="ba-protocol__title" style="color: var(--c-primary);">Benefícios</h4>
+            <ul
+              style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: var(--sp-4);">
+              <li
+                style="display: flex; align-items: center; gap: var(--sp-3); font-size: 0.95rem; font-weight: 500; color: var(--c-on-surface);">
+                <span class="material-symbols-outlined" style="color: var(--c-secondary);"
+                  aria-hidden="true">verified</span>
+                Olhar mais leve
+              </li>
+              <li
+                style="display: flex; align-items: center; gap: var(--sp-3); font-size: 0.95rem; font-weight: 500; color: var(--c-on-surface);">
+                <span class="material-symbols-outlined" style="color: var(--c-secondary);"
+                  aria-hidden="true">verified</span>
+                Aparência mais jovem
+              </li>
+              <li
+                style="display: flex; align-items: center; gap: var(--sp-3); font-size: 0.95rem; font-weight: 500; color: var(--c-on-surface);">
+                <span class="material-symbols-outlined" style="color: var(--c-secondary);"
+                  aria-hidden="true">verified</span>
+                Resultado natural
+              </li>
+            </ul>
+          </div>
+
+          <div class="ba-protocol" style="border-left-color: var(--c-secondary);">
+            <h4 class="ba-protocol__title"
+              style="text-transform: uppercase; font-size: 0.875rem; letter-spacing: 0.05em; margin-bottom: 0.5rem; color: var(--c-primary); opacity: 0.8;">
+              Segurança</h4>
+            <p class="ba-protocol__text" style="font-size: 0.9rem; color: var(--c-on-surface-muted);">
+              Cirurgia realizada por médicos capacitados, com planejamento individualizado.
+            </p>
+          </div>
+
+          <div style="margin-top: 3rem;">
+            <a href="https://wa.me/5511999999999" target="_blank" class="btn btn--primary btn--lg btn-glow-dark"
+              data-magnetic style="background: var(--c-primary); color: var(--c-white);">
+              Quero rejuvenescer meu olhar!
+              <span class="material-symbols-outlined" aria-hidden="true" style="font-size: 18px;">arrow_forward</span>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- ANTES E DEPOIS Carousel -->
+      <div data-reveal="up" style="margin-top: var(--sp-12);">
+        <div style="text-align: center; margin-bottom: var(--sp-8);">
+          <span class="eyebrow" style="margin-bottom: var(--sp-4); display: inline-block;">Resultados</span>
+          <h3 class="ba-title" style="font-size: 2.25rem; color: var(--c-primary);">Antes e Depois</h3>
+          <p style="color: var(--c-on-surface-muted); max-width: 40rem; margin: 0 auto;">Pacientes reais que renovaram o
+            olhar e resgataram a autoconfiança de forma natural.</p>
+        </div>
+
+        <div class="blefaro-carousel">
+          <div class="blefaro-carousel__track">
+            <!-- Group 1 -->
+            <div class="blefaro-carousel__slide"><img
+                src="https://images.unsplash.com/photo-1544111751-28562725e1a3?auto=format&fit=crop&w=600&h=1066&q=80"
+                alt="Antes e Depois 1" loading="lazy"></div>
+            <div class="blefaro-carousel__slide"><img
+                src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&h=1066&q=80"
+                alt="Antes e Depois 2" loading="lazy"></div>
+            <div class="blefaro-carousel__slide"><img
+                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&h=1066&q=80"
+                alt="Antes e Depois 3" loading="lazy"></div>
+            <div class="blefaro-carousel__slide"><img
+                src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=600&h=1066&q=80"
+                alt="Antes e Depois 4" loading="lazy"></div>
+            <div class="blefaro-carousel__slide"><img
+                src="https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&w=600&h=1066&q=80"
+                alt="Antes e Depois 5" loading="lazy"></div>
+
+            <!-- Group 2 (Duplicate for continuous scroll) -->
+            <div class="blefaro-carousel__slide"><img
+                src="https://images.unsplash.com/photo-1544111751-28562725e1a3?auto=format&fit=crop&w=600&h=1066&q=80"
+                alt="Antes e Depois 1" loading="lazy"></div>
+            <div class="blefaro-carousel__slide"><img
+                src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&h=1066&q=80"
+                alt="Antes e Depois 2" loading="lazy"></div>
+            <div class="blefaro-carousel__slide"><img
+                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&h=1066&q=80"
+                alt="Antes e Depois 3" loading="lazy"></div>
+            <div class="blefaro-carousel__slide"><img
+                src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=600&h=1066&q=80"
+                alt="Antes e Depois 4" loading="lazy"></div>
+            <div class="blefaro-carousel__slide"><img
+                src="https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&w=600&h=1066&q=80"
+                alt="Antes e Depois 5" loading="lazy"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       LASER ÍNTIMO
+  ══════════════════════════════════════════ -->
+  <section class="section ba-section" id="laser-intimo">
+    <div class="container">
+
+      <div class="ba-head" data-reveal="up">
+        <span class="eyebrow eyebrow--light" style="margin-bottom: var(--sp-4); display: inline-block;">Laser
+          Íntimo</span>
+        <h2 class="ba-title">Recupere o conforto e a confiança <em>na sua intimidade</em></h2>
+        <p class="ba-desc">Tratamento não cirúrgico que utiliza tecnologia avançada para estimular a regeneração da
+          região íntima.</p>
+      </div>
+
+      <div class="ba-layout" style="align-items: center;">
+
+        <!-- Card: Image + CRM overlay + Paragraph -->
+        <div class="ba-media-wrap premium-glass-card" data-reveal="left">
+          <div class="img-wrap" style="position: relative;">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYqTOVY1BxxQRoZryZpm5winesjB7VUvii-VCGY6BWrxCBQPDugq0oI6n7hJtdZJPy_VIcrpma8G98e_sYT6TnHAuzPZCZPmPP8JNNPD0JkYyOl6l58zUJUyy3wY-3UtKuD0KF6uyF6CU49IGEKrTNn2TGvfjttbDlWDpW1OiPLcY8sU05DyiNvDsm7OxMrn5R5TMEVCTTUcCUyagmMNzUxnRJ8jwxzvDSkDQf4aWF6X2ilIZQN0wgU2OB7xQ0wb8LbJHfzm45dPE"
+              alt="Dra. Mirelle Ruivo" loading="lazy" />
+
+            <!-- Bottom Fade for Text Contrast -->
+            <div
+              style="position: absolute; inset: auto 0 0 0; height: 50%; background: linear-gradient(to top, rgba(0,0,0,0.85), transparent); z-index: 1; pointer-events: none;">
+            </div>
+
+            <!-- Doctor Details -->
+            <div
+              style="position: absolute; bottom: 1.5rem; left: 1.5rem; z-index: 2; pointer-events: none; display: flex; flex-direction: column; gap: 0.25rem;">
+              <span
+                style="background: rgba(0, 106, 101, 0.75); backdrop-filter: blur(8px); color: rgba(235, 235, 235, 0.9); border: 1px solid rgba(255,255,255,0.1); font-size: 0.65rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: var(--r-full); width: max-content; text-transform: uppercase; letter-spacing: 0.05em;">CRM
+                22812</span>
+              <span
+                style="color: var(--c-white); font-family: var(--font-serif); font-size: 1.375rem; font-weight: 600; text-shadow: 0 2px 12px rgba(0,0,0,0.5);">Dra.
+                Mirelle Ruivo</span>
+            </div>
+          </div>
+
+          <div style="padding: 2.5rem 2rem;">
+            <p style="font-size: 0.95rem; color: rgba(252,249,248,0.7); line-height: 1.7; margin: 0;">
+              O laser íntimo atua melhorando a lubrificação, firmeza e qualidade dos tecidos, sendo indicado para
+              mulheres que desejam mais conforto, saúde íntima e melhora da autoestima, com um procedimento rápido e
+              praticamente sem tempo de recuperação.
+            </p>
+          </div>
+        </div>
+
+        <!-- Info panel -->
+        <div class="ba-info" data-reveal="right" style="justify-content: center;">
+
+          <a href="#" class="ba-cta"
+            onclick="event.preventDefault(); alert('Abre um pop up para assistir a um vídeo que explica sobre o laser íntimo')"
+            style="margin-bottom: 2.5rem; width: fit-content;">
+            Saber mais sobre o procedimento
+            <span class="material-symbols-outlined" aria-hidden="true" style="margin-left: 2px;">play_circle</span>
+          </a>
+
+          <div class="ba-protocol" style="margin-bottom: 2rem;">
+            <h4 class="ba-protocol__title">Benefícios</h4>
+            <ul
+              style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: var(--sp-4);">
+              <li
+                style="display: flex; align-items: center; gap: var(--sp-3); font-size: 0.95rem; font-weight: 500; color: rgba(252,249,248,0.9);">
+                <span class="material-symbols-outlined" style="color: var(--c-secondary);"
+                  aria-hidden="true">verified</span>
+                Mais lubrificação
+              </li>
+              <li
+                style="display: flex; align-items: center; gap: var(--sp-3); font-size: 0.95rem; font-weight: 500; color: rgba(252,249,248,0.9);">
+                <span class="material-symbols-outlined" style="color: var(--c-secondary);"
+                  aria-hidden="true">verified</span>
+                Mais firmeza
+              </li>
+              <li
+                style="display: flex; align-items: center; gap: var(--sp-3); font-size: 0.95rem; font-weight: 500; color: rgba(252,249,248,0.9);">
+                <span class="material-symbols-outlined" style="color: var(--c-secondary);"
+                  aria-hidden="true">verified</span>
+                Mais conforto
+              </li>
+            </ul>
+          </div>
+
+          <div class="ba-protocol">
+            <h4 class="ba-protocol__title"
+              style="text-transform: uppercase; font-size: 0.875rem; letter-spacing: 0.05em; margin-bottom: 0.75rem; opacity: 0.8;">
+              Diferencial</h4>
+            <div class="ba-tags">
+              <span class="ba-tag">Não cirúrgico</span>
+              <span class="ba-tag">Rápido</span>
+              <span class="ba-tag">Confortável</span>
+            </div>
+          </div>
+
+          <div style="margin-top: 3rem;">
+            <a href="https://wa.me/5511999999999" target="_blank" class="btn btn--primary btn--lg btn-glow"
+              data-magnetic>
+              Quero entender se é para mim
+              <span class="material-symbols-outlined" aria-hidden="true" style="font-size: 18px;">arrow_forward</span>
+            </a>
+          </div>
+
         </div>
 
       </div>
@@ -682,17 +1271,22 @@
     <div class="container">
 
       <div class="section-center" data-reveal="up">
-        <span class="eyebrow">Liderança Médica</span>
+        <span class="eyebrow">Equipe Feminina</span>
         <h2 class="section-title">Mãos Especializadas</h2>
       </div>
 
       <div class="team-grid">
 
         <div class="doctor" data-reveal="up" data-delay="0">
-          <div class="doctor__photo">
+          <div class="doctor__photo" style="position: relative;">
             <img
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYqTOVY1BxxQRoZryZpm5winesjB7VUvii-VCGY6BWrxCBQPDugq0oI6n7hJtdZJPy_VIcrpma8G98e_sYT6TnHAuzPZCZPmPP8JNNPD0JkYyOl6l58zUJUyy3wY-3UtKuD0KF6uyF6CU49IGEKrTNn2TGvfjttbDlWDpW1OiPLcY8sU05DyiNvDsm7OxMrn5R5TMEVCTTUcCUyagmMNzUxnRJ8jwxzvDSkDQf4aWF6X2ilIZQN0wgU2OB7xQ0wb8LbJHfzm45dPE"
               alt="Dr. Elena Thorne" class="doctor__img" loading="lazy" />
+            <div style="position: absolute; bottom: 1rem; left: 1rem; z-index: 2; pointer-events: none;">
+              <span
+                style="background: rgba(0, 106, 101, 0.75); backdrop-filter: blur(8px); color: rgba(235, 235, 235, 0.9); border: 1px solid rgba(255,255,255,0.1); font-size: 0.65rem; font-weight: 700; padding: 0.25rem 0.6rem; border-radius: var(--r-full); display: inline-block; text-transform: uppercase; letter-spacing: 0.05em; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">CRM
+                14253</span>
+            </div>
           </div>
           <h4 class="doctor__name">Dr. Elena Thorne</h4>
           <p class="doctor__role">Diretora Médica e Fundadora</p>
@@ -700,10 +1294,15 @@
         </div>
 
         <div class="doctor" data-reveal="up" data-delay="150">
-          <div class="doctor__photo">
+          <div class="doctor__photo" style="position: relative;">
             <img
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLFC3CrOUQJjyKlWbplRW2KBqBo8lJU11sGNq2nlHdsMb51N8_TGEv4vJGCnJ3v33y0jEtWfdpaA0V8fdOZ4wZg9eBr5fxksUUuUCyQ7ltkH1r0DjYPzz-Re4sTu3MYq6uO0ZvFMjJdk_m-erzf8MbFNqs8Ex15jW3-gcY-Fyn9XlX61djNzH8O_ZimN3xQcK34gGu6e4yE1eaR6juKbtRgXgYBV_Gxvn_3MTiS0OUBqzwKipzdwLudD6b_vfSSgf8G-HatbjpCLE"
               alt="Dr. Sarah Khalil" class="doctor__img" loading="lazy" />
+            <div style="position: absolute; bottom: 1rem; left: 1rem; z-index: 2; pointer-events: none;">
+              <span
+                style="background: rgba(0, 106, 101, 0.75); backdrop-filter: blur(8px); color: rgba(235, 235, 235, 0.9); border: 1px solid rgba(255,255,255,0.1); font-size: 0.65rem; font-weight: 700; padding: 0.25rem 0.6rem; border-radius: var(--r-full); display: inline-block; text-transform: uppercase; letter-spacing: 0.05em; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">CRM
+                38291</span>
+            </div>
           </div>
           <h4 class="doctor__name">Dr. Sarah Khalil</h4>
           <p class="doctor__role">Líder em Dermatologia</p>
@@ -711,10 +1310,15 @@
         </div>
 
         <div class="doctor" data-reveal="up" data-delay="300">
-          <div class="doctor__photo">
+          <div class="doctor__photo" style="position: relative;">
             <img
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMW6lXi6rtNqCSTsjDqWv_CbDt7a21NuTxC4PPlxvOT8B1WhY8oumyvE3crxkGtlsE2pcxrVax9VtQZTeusw2vuh1nf2s642JbAapN2zjJYBpvpfDPX130xlWJHtF22Zo6EnC0n7PgJDenUaSszUoOz29R6UJWu21w7xBf9-Jk-tD4YJ_KR92fmjjomtWxCsUPLSTbrrnrad0Y1oMNdRdTaKKQ3y21Lffw0x4Ze--Z_oykgzZ0pp-YH8FEG4ISfuIrgJDoa1B2XP8"
               alt="Dr. Sofia Rossi" class="doctor__img" loading="lazy" />
+            <div style="position: absolute; bottom: 1rem; left: 1rem; z-index: 2; pointer-events: none;">
+              <span
+                style="background: rgba(0, 106, 101, 0.75); backdrop-filter: blur(8px); color: rgba(235, 235, 235, 0.9); border: 1px solid rgba(255,255,255,0.1); font-size: 0.65rem; font-weight: 700; padding: 0.25rem 0.6rem; border-radius: var(--r-full); display: inline-block; text-transform: uppercase; letter-spacing: 0.05em; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">CRM
+                67290</span>
+            </div>
           </div>
           <h4 class="doctor__name">Dr. Sofia Rossi</h4>
           <p class="doctor__role">Consultora em Longevidade</p>
@@ -727,36 +1331,6 @@
   </section>
 
   <!-- ══════════════════════════════════════════
-       OUR ETHOS — DARK SECTION
-  ══════════════════════════════════════════ -->
-  <section class="ethos" id="wellness">
-    <div class="ethos__decor" aria-hidden="true"></div>
-    <div class="container">
-      <div class="ethos__body">
-        <span class="eyebrow eyebrow--light" data-reveal="up">Nossa Filosofia</span>
-        <h2 class="ethos__title" data-reveal="up" data-delay="100">O Toque Invisível</h2>
-        <blockquote class="ethos__quote" data-reveal="up" data-delay="200">
-          "A verdadeira beleza é a ausência de esforço evidente. Operamos sob o princípio da
-          'Paciente Única' — onde sua jornada é totalmente isolada, personalizada e protegida
-          do mundo exterior."
-        </blockquote>
-        <div class="ethos__pillars">
-          <div class="ethos__pillar" data-reveal="up" data-delay="300">
-            <h4 class="ethos__pillar-title">Privacidade Clínica</h4>
-            <p class="ethos__pillar-text">Entradas discretas e transições privadas entre as suítes garantem anonimato
-              total para cada paciente.</p>
-          </div>
-          <div class="ethos__pillar" data-reveal="up" data-delay="400">
-            <h4 class="ethos__pillar-title">Continuidade Personalizada</h4>
-            <p class="ethos__pillar-text">Uma assessora dedicada gerencia cada etapa do seu plano estético de longo
-              prazo.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════════
        VISIT THE ATELIER
   ══════════════════════════════════════════ -->
   <section class="section visit" id="journal">
@@ -764,10 +1338,11 @@
       <div class="visit__layout">
 
         <div class="visit__info" data-reveal="left">
-          <h2 class="section-title">Venha nos<br>Visitar</h2>
+          <span class="eyebrow eyebrow--light" data-reveal="up">Atendimento em Guarulhos</span>
+          <h2 class="section-title visit__title">Venha nos<br>Visitar</h2>
           <p class="visit__lead">
-            Localizado no coração do distrito médico, nosso Atelier principal é o epicentro
-            da inovação estética.
+            Nossa clínica em Guarulhos reúne tecnologia de ponta e um ambiente exclusivo,
+            projetado para oferecer a mais alta experiência em estética feminina.
           </p>
 
           <div class="visit__contacts">
@@ -776,9 +1351,9 @@
                 <span class="material-symbols-outlined" aria-hidden="true">location_on</span>
               </div>
               <div>
-                <h5 class="visit__contact-title">O Atelier Principal</h5>
+                <h5 class="visit__contact-title">Nossa Clínica</h5>
                 <p class="visit__contact-text">
-                  Av. das Américas, 3434 — Sala 400<br>Rio de Janeiro, RJ
+                  Av. Paulo Faccini, 1477<br>Guarulhos, SP
                 </p>
               </div>
             </div>
@@ -789,30 +1364,35 @@
               <div>
                 <h5 class="visit__contact-title">Consultas Privadas</h5>
                 <p class="visit__contact-text">
-                  +55 21 99999-0000<br>contato@mulherez.com
+                  +55 11 99522-4461<br>contato@mulherez.com
                 </p>
               </div>
             </div>
           </div>
 
-          <button class="btn btn--primary btn--lg btn--icon" data-magnetic>
+          <a href="https://wa.me/5511995224461" target="_blank" rel="noopener noreferrer"
+            class="btn btn--outline-light btn--lg btn--icon visit__cta" data-magnetic>
             Agendar Consulta Privada
-            <span class="material-symbols-outlined" aria-hidden="true">calendar_month</span>
-          </button>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18"
+              aria-hidden="true" style="flex-shrink:0">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+            </svg>
+          </a>
         </div>
 
         <div class="visit__map" data-reveal="right">
-          <!--
-            ╔══════════════════════════════════════════════════════╗
-            ║  GOOGLE MAPS EMBED                                   ║
-            ║  1. Acesse maps.google.com e busque o endereço       ║
-            ║  2. Clique em "Compartilhar" → "Incorporar um mapa"  ║
-            ║  3. Copie o link do src="..." e cole abaixo          ║
-            ╚══════════════════════════════════════════════════════╝
-          -->
-          <iframe class="visit__map-frame" src="COLE_AQUI_O_LINK_DO_GOOGLE_MAPS_EMBED" width="100%" height="100%"
-            style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-            title="Localização Mulherez Clinical Atelier"></iframe>
+          <iframe
+            class="visit__map-frame"
+            src="https://maps.google.com/maps?q=Av+Paulo+Faccini+1477+Guarulhos+SP+Brasil&output=embed&z=16"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Localização Mulherez — Av. Paulo Faccini, 1477, Guarulhos">
+          </iframe>
         </div>
 
       </div>
@@ -924,13 +1504,13 @@
       // Function to initialize and run stepper in a specific pane
       function startStepper(paneId) {
         clearInterval(currentStepperInterval);
-        
+
         const pane = document.getElementById(`tab-${paneId}`);
-        if(!pane) return;
+        if (!pane) return;
 
         const stepperBtns = pane.querySelectorAll('.stepper-btn');
         const stepperCards = pane.querySelectorAll('.stepper-card');
-        if(stepperBtns.length === 0) return;
+        if (stepperBtns.length === 0) return;
 
         // Reset all in this pane
         stepperBtns.forEach(b => {
@@ -938,7 +1518,7 @@
           const newBtn = b.cloneNode(true);
           b.parentNode.replaceChild(newBtn, b);
         });
-        
+
         // Re-select after clonning
         const freshBtns = pane.querySelectorAll('.stepper-btn');
 
@@ -954,12 +1534,12 @@
         const tick = () => {
           freshBtns[currentIndex].classList.remove('active');
           stepperCards[currentIndex].classList.remove('active');
-          
+
           currentIndex = (currentIndex + 1) % freshBtns.length;
-          
+
           // Re-trigger CSS animation reflow
           void freshBtns[currentIndex].offsetWidth;
-          
+
           freshBtns[currentIndex].classList.add('active');
           stepperCards[currentIndex].classList.add('active');
         };
@@ -971,16 +1551,16 @@
         freshBtns.forEach((btn, ind) => {
           btn.addEventListener('click', () => {
             clearInterval(currentStepperInterval); // stop current timer
-            
+
             freshBtns[currentIndex].classList.remove('active');
             stepperCards[currentIndex].classList.remove('active');
-            
+
             currentIndex = ind;
             void freshBtns[currentIndex].offsetWidth;
-            
+
             freshBtns[currentIndex].classList.add('active');
             stepperCards[currentIndex].classList.add('active');
-            
+
             // restart timer
             currentStepperInterval = setInterval(tick, STEPPER_DURATION);
           });
@@ -989,7 +1569,7 @@
 
       // Initial Start for first active tab
       const initialTab = document.querySelector('.tab-btn-top.active');
-      if(initialTab) {
+      if (initialTab) {
         startStepper(initialTab.dataset.tab);
       }
 
@@ -998,18 +1578,18 @@
         btn.addEventListener('click', () => {
           tabBtnsTop.forEach(b => b.classList.remove('active'));
           tabPanes.forEach(p => p.classList.remove('active'));
-          
+
           btn.classList.add('active');
           const targetId = btn.dataset.tab;
           const target = document.getElementById(`tab-${targetId}`);
-          if(target) target.classList.add('active');
+          if (target) target.classList.add('active');
 
           // Spin up the stepper for the newly selected category
           startStepper(targetId);
         });
       });
     });
-    
+
     // DEBUG: Measure DOM layouts
     window.addEventListener('load', () => {
       setTimeout(() => {
@@ -1019,7 +1599,7 @@
         console.log("DEBUG-LAYOUT - stepper-carousel:", carousel ? JSON.stringify(carousel.getBoundingClientRect()) : "null");
         console.log("DEBUG-LAYOUT - stepper-menu:", menu ? JSON.stringify(menu.getBoundingClientRect()) : "null");
         console.log("DEBUG-LAYOUT - stepper-content:", content ? JSON.stringify(content.getBoundingClientRect()) : "null");
-        
+
         const pane = document.querySelector('.tab-pane.active');
         console.log("DEBUG-LAYOUT - active tab-pane:", pane ? JSON.stringify(pane.getBoundingClientRect()) : "null");
       }, 1000);
