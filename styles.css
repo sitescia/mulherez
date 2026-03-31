@@ -2792,3 +2792,28 @@ input, textarea { font-family: inherit; }
   outline-offset: 3px;
   border-radius: var(--r-sm);
 }
+
+/* ── FLOATING WHATSAPP BUTTON ────────────────────────────────── */
+.fab-whatsapp {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: #25D366;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  z-index: 9000;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.fab-whatsapp:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
+}
+
