@@ -1488,9 +1488,10 @@
         <h2 class="section-title">Mãos Especializadas</h2>
       </div>
 
+      <div class="team-grid-wrapper" data-reveal="up">
       <div class="team-grid">
 
-        <div class="doctor" data-reveal="up" data-delay="0">
+        <div class="doctor">
           <div class="doctor__photo" style="position: relative;">
             <img
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYqTOVY1BxxQRoZryZpm5winesjB7VUvii-VCGY6BWrxCBQPDugq0oI6n7hJtdZJPy_VIcrpma8G98e_sYT6TnHAuzPZCZPmPP8JNNPD0JkYyOl6l58zUJUyy3wY-3UtKuD0KF6uyF6CU49IGEKrTNn2TGvfjttbDlWDpW1OiPLcY8sU05DyiNvDsm7OxMrn5R5TMEVCTTUcCUyagmMNzUxnRJ8jwxzvDSkDQf4aWF6X2ilIZQN0wgU2OB7xQ0wb8LbJHfzm45dPE"
@@ -1501,12 +1502,14 @@
                 14253</span>
             </div>
           </div>
-          <h4 class="doctor__name">Dr. Elena Thorne</h4>
-          <p class="doctor__role">Diretora Médica e Fundadora</p>
-          <p class="doctor__bio">Pioneira em estética facial estrutural com mais de 15 anos de formação cirúrgica.</p>
+          <div class="doctor__info">
+            <h4 class="doctor__name">Dr. Elena Thorne</h4>
+            <p class="doctor__role">Diretora Médica e Fundadora</p>
+            <p class="doctor__bio">Pioneira em estética facial estrutural com mais de 15 anos de formação cirúrgica.</p>
+          </div>
         </div>
 
-        <div class="doctor" data-reveal="up" data-delay="150">
+        <div class="doctor">
           <div class="doctor__photo" style="position: relative;">
             <img
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLFC3CrOUQJjyKlWbplRW2KBqBo8lJU11sGNq2nlHdsMb51N8_TGEv4vJGCnJ3v33y0jEtWfdpaA0V8fdOZ4wZg9eBr5fxksUUuUCyQ7ltkH1r0DjYPzz-Re4sTu3MYq6uO0ZvFMjJdk_m-erzf8MbFNqs8Ex15jW3-gcY-Fyn9XlX61djNzH8O_ZimN3xQcK34gGu6e4yE1eaR6juKbtRgXgYBV_Gxvn_3MTiS0OUBqzwKipzdwLudD6b_vfSSgf8G-HatbjpCLE"
@@ -1517,12 +1520,14 @@
                 38291</span>
             </div>
           </div>
-          <h4 class="doctor__name">Dr. Sarah Khalil</h4>
-          <p class="doctor__role">Líder em Dermatologia</p>
-          <p class="doctor__bio">Especialista em regeneração celular e protocolos avançados de laser.</p>
+          <div class="doctor__info">
+            <h4 class="doctor__name">Dr. Sarah Khalil</h4>
+            <p class="doctor__role">Líder em Dermatologia</p>
+            <p class="doctor__bio">Especialista em regeneração celular e protocolos avançados de laser.</p>
+          </div>
         </div>
 
-        <div class="doctor" data-reveal="up" data-delay="300">
+        <div class="doctor">
           <div class="doctor__photo" style="position: relative;">
             <img
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMW6lXi6rtNqCSTsjDqWv_CbDt7a21NuTxC4PPlxvOT8B1WhY8oumyvE3crxkGtlsE2pcxrVax9VtQZTeusw2vuh1nf2s642JbAapN2zjJYBpvpfDPX130xlWJHtF22Zo6EnC0n7PgJDenUaSszUoOz29R6UJWu21w7xBf9-Jk-tD4YJ_KR92fmjjomtWxCsUPLSTbrrnrad0Y1oMNdRdTaKKQ3y21Lffw0x4Ze--Z_oykgzZ0pp-YH8FEG4ISfuIrgJDoa1B2XP8"
@@ -1533,13 +1538,24 @@
                 67290</span>
             </div>
           </div>
-          <h4 class="doctor__name">Dr. Sofia Rossi</h4>
-          <p class="doctor__role">Consultora em Longevidade</p>
-          <p class="doctor__bio">Especialista em equilíbrio hormonal e otimização metabólica para a longevidade
-            feminina.</p>
+          <div class="doctor__info">
+            <h4 class="doctor__name">Dr. Sofia Rossi</h4>
+            <p class="doctor__role">Consultora em Longevidade</p>
+            <p class="doctor__bio">Especialista em equilíbrio hormonal e otimização metabólica para a longevidade
+              feminina.</p>
+          </div>
         </div>
 
       </div>
+      </div>
+
+      <!-- Team Dots (mobile only) -->
+      <div class="team__dots" id="teamDots" aria-label="Navegação do carrossel">
+        <button class="team__dot team__dot--active" data-index="0" aria-label="Doutora 1"></button>
+        <button class="team__dot" data-index="1" aria-label="Doutora 2"></button>
+        <button class="team__dot" data-index="2" aria-label="Doutora 3"></button>
+      </div>
+
     </div>
   </section>
 
@@ -2008,6 +2024,104 @@
       wrapper.addEventListener('mouseleave', () => { autoTimer = setInterval(next, 4000); });
     })();
 
+    // ── TEAM CAROUSEL (Mobile only) ────────────────────────────
+    (function () {
+      const wrapper = document.querySelector('.team-grid-wrapper');
+      const grid = document.querySelector('.team-grid');
+      const dotsContainer = document.getElementById('teamDots');
+      if (!grid || !wrapper || !dotsContainer) return;
+
+      const dots = dotsContainer.querySelectorAll('.team__dot');
+      const GAP = 16;
+      const TOTAL = 3;
+      let current = 0;
+      let autoTimer;
+      let cardW = 0;
+      let isMobile = window.innerWidth < 768;
+
+      function updateDots() {
+        dots.forEach((d, i) => {
+          d.classList.toggle('team__dot--active', i === current);
+        });
+      }
+
+      function setup() {
+        isMobile = window.innerWidth < 768;
+        if (isMobile) {
+          cardW = wrapper.offsetWidth;
+          grid.querySelectorAll('.doctor').forEach(c => {
+            c.style.width = cardW + 'px';
+            c.style.minWidth = cardW + 'px';
+            c.style.maxWidth = cardW + 'px';
+            c.style.marginRight = GAP + 'px';
+          });
+          grid.style.transition = 'none';
+          grid.style.transform = 'translateX(-' + (current * (cardW + GAP)) + 'px)';
+          requestAnimationFrame(() => {
+            grid.style.transition = '';
+          });
+        } else {
+          grid.style.transform = '';
+          grid.style.transition = '';
+          grid.querySelectorAll('.doctor').forEach(c => {
+            c.style.width = '';
+            c.style.minWidth = '';
+            c.style.maxWidth = '';
+            c.style.marginRight = '';
+          });
+        }
+      }
+
+      function goTo(index) {
+        if (!isMobile) return;
+        current = ((index % TOTAL) + TOTAL) % TOTAL;
+        grid.style.transform = 'translateX(-' + (current * (cardW + GAP)) + 'px)';
+        updateDots();
+      }
+
+      function next() { goTo(current + 1); }
+
+      setup();
+      window.addEventListener('resize', setup);
+
+      function startAutoPlay() {
+        clearInterval(autoTimer);
+        if (isMobile) autoTimer = setInterval(next, 5000);
+      }
+      function stopAutoPlay() { clearInterval(autoTimer); }
+
+      startAutoPlay();
+
+      dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+          stopAutoPlay();
+          goTo(+dot.dataset.index);
+          startAutoPlay();
+        });
+      });
+
+      let startX = 0, dragging = false;
+      wrapper.addEventListener('mousedown', e => { startX = e.clientX; dragging = true; });
+      wrapper.addEventListener('touchstart', e => { startX = e.touches[0].clientX; dragging = true; stopAutoPlay(); }, { passive: true });
+      wrapper.addEventListener('mouseup', e => {
+        if (!dragging || !isMobile) return;
+        dragging = false;
+        if (e.clientX - startX < -40) next();
+        else if (e.clientX - startX > 40) goTo(current - 1);
+        startAutoPlay();
+      });
+      wrapper.addEventListener('touchend', e => {
+        if (!dragging || !isMobile) return;
+        dragging = false;
+        const dx = e.changedTouches[0].clientX - startX;
+        if (dx < -40) next();
+        else if (dx > 40) goTo(current - 1);
+        startAutoPlay();
+      });
+
+      wrapper.addEventListener('mouseenter', stopAutoPlay);
+      wrapper.addEventListener('mouseleave', startAutoPlay);
+    })();
 
     document.addEventListener("DOMContentLoaded", () => {
       // 1. Top Level Tabs (Categories)

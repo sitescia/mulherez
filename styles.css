@@ -1542,12 +1542,20 @@ input, textarea { font-family: inherit; }
   gap: var(--sp-12);
 }
 
-/* Mobile: cards empilhados */
+/* Mobile: carrossel vertical premium */
 @media (max-width: 768px) {
+  .team-grid-wrapper {
+    overflow: hidden;
+    cursor: grab;
+    user-select: none;
+    margin-bottom: var(--sp-4);
+  }
+  .team-grid-wrapper:active { cursor: grabbing; }
+
   .team-grid {
     display: flex;
-    flex-direction: column;
-    gap: var(--sp-8);
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
   }
 }
 
@@ -1594,48 +1602,108 @@ input, textarea { font-family: inherit; }
   color: var(--c-secondary);
 }
 
+.doctor__info {
+  display: contents;
+}
+
 .doctor__bio {
   font-size: 0.875rem;
   color: var(--c-on-surface-muted);
   line-height: 1.65;
 }
 
-/* Mobile: card compacto para carrossel */
+/* Mobile: card vertical premium para carrossel */
 @media (max-width: 768px) {
   .doctor {
+    flex-shrink: 0;
     background: var(--c-white);
     border-radius: var(--r-2xl);
-    padding: var(--sp-6);
-    gap: var(--sp-3);
-    box-shadow: 0 2px 16px rgba(75,25,75,0.06);
+    padding: 0;
+    gap: 0;
+    box-shadow: 0 4px 24px rgba(75,25,75,0.08);
     border: 1px solid rgba(75,25,75,0.06);
-    text-align: center;
-    align-items: center;
+    overflow: hidden;
   }
 
   .doctor__photo {
-    aspect-ratio: 1/1;
-    width: 160px;
-    border-radius: 50%;
-    margin-bottom: var(--sp-2);
+    aspect-ratio: 3/4;
+    width: 100%;
+    border-radius: 0;
+    margin-bottom: 0;
   }
 
   .doctor__img {
     filter: grayscale(0%);
   }
 
+  .doctor__info {
+    padding: var(--sp-6) var(--sp-6) var(--sp-8);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--sp-2);
+    position: relative;
+  }
+
+  .doctor__info::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: var(--sp-8);
+    right: var(--sp-8);
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--c-secondary), transparent);
+    opacity: 0.3;
+  }
+
   .doctor__name {
-    font-size: 1.25rem;
+    font-size: 1.3rem;
+    margin-top: var(--sp-2);
   }
 
   .doctor__role {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
+    color: var(--c-secondary);
   }
 
   .doctor__bio {
-    font-size: 0.875rem;
-    line-height: 1.55;
-    max-width: 280px;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    max-width: 300px;
+    color: var(--c-on-surface-muted);
+    margin-top: var(--sp-1);
+  }
+}
+
+/* Team dots */
+.team__dots {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .team__dots {
+    display: flex;
+    justify-content: center;
+    gap: var(--sp-2);
+    margin-top: var(--sp-6);
+  }
+
+  .team__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--c-surface-highest);
+    border: none;
+    cursor: pointer;
+    transition: background var(--t-fast), width var(--t-fast);
+    padding: 0;
+  }
+
+  .team__dot--active {
+    background: var(--c-primary);
+    width: 24px;
+    border-radius: 4px;
   }
 }
 
