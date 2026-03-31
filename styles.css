@@ -2619,15 +2619,13 @@ input, textarea { font-family: inherit; }
   .tabs-section { padding-block: var(--sp-12); }
   
   .tabs-container {
-    align-items: stretch;
+    align-items: center;
   }
   .tabs-nav-top {
-    overflow-x: auto; justify-content: flex-start;
-    padding-bottom: 4px; scrollbar-width: none;
-    margin-inline: 0; /* Reset auto centering for mobile scroll */
-    max-width: 100%;
+    justify-content: center;
+    width: 100%;
+    margin-inline: auto;
   }
-  .tabs-nav-top::-webkit-scrollbar { display: none; }
   .tab-btn-top { white-space: nowrap; font-size: 0.95rem; padding: 0.65rem 1.25rem; }
   
   .stepper-carousel {
