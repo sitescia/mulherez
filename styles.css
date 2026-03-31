@@ -2146,6 +2146,146 @@ input, textarea { font-family: inherit; }
 }
 .footer__ziadevs-pill:hover strong { color: rgba(252,249,248,0.9); }
 
+/* ── MOBILE TREATMENT CAROUSEL ──────────────────────────────── */
+.mob-tc { display: none; }
+
+@media (max-width: 767px) {
+  .stepper-carousel { display: none !important; }
+
+  .mob-tc {
+    display: block;
+    margin-top: var(--sp-6);
+  }
+
+  .mob-tc__wrapper {
+    overflow: hidden;
+    border-radius: var(--r-2xl);
+    position: relative;
+  }
+
+  .mob-tc__track {
+    display: flex;
+    transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+  }
+
+  .mob-tc__card {
+    position: relative;
+    flex: 0 0 100%;
+    width: 100%;
+    border-radius: var(--r-2xl);
+    overflow: hidden;
+    aspect-ratio: 3 / 4;
+    background: var(--c-surface-highest);
+  }
+
+  .mob-tc__img {
+    position: absolute;
+    inset: 0;
+  }
+
+  .mob-tc__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* gradient overlay */
+  .mob-tc__card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      transparent 35%,
+      rgba(30, 5, 30, 0.5) 65%,
+      rgba(30, 5, 30, 0.88) 100%
+    );
+    pointer-events: none;
+  }
+
+  .mob-tc__overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: var(--sp-6);
+    z-index: 2;
+  }
+
+  .mob-tc__tag {
+    display: inline-block;
+    font-size: 0.625rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--c-secondary-dim);
+    margin-bottom: var(--sp-2);
+  }
+
+  .mob-tc__title {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--c-white);
+    line-height: 1.15;
+    margin-bottom: var(--sp-2);
+  }
+
+  .mob-tc__desc {
+    font-size: 0.875rem;
+    color: rgba(252, 249, 248, 0.7);
+    line-height: 1.4;
+  }
+
+  /* dots */
+  .mob-tc__dots {
+    display: flex;
+    justify-content: center;
+    gap: var(--sp-2);
+    margin-top: var(--sp-4);
+  }
+
+  .mob-tc__dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--c-surface-highest);
+    border: none;
+    cursor: pointer;
+    transition: background var(--t-fast), width var(--t-fast), border-radius var(--t-fast);
+  }
+
+  .mob-tc__dot--active {
+    background: var(--c-primary);
+    width: 22px;
+    border-radius: 4px;
+  }
+
+  /* progress bar */
+  .mob-tc__progress-bar {
+    height: 2px;
+    background: var(--c-surface-high);
+    border-radius: 2px;
+    margin-top: var(--sp-3);
+    overflow: hidden;
+  }
+
+  .mob-tc__progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(to right, var(--c-primary), var(--c-secondary));
+    border-radius: 2px;
+    transition: width 0.1s linear;
+  }
+
+  .mob-tc__progress-fill.running {
+    width: 100%;
+    transition: width 3s linear;
+  }
+}
+
 /* ── TREATMENTS TABS & CAROUSEL (DESKTOP) ───────────────────── */
 .tabs-section { padding-block: var(--sp-24); background: var(--c-surface-low); }
 
