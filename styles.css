@@ -1925,7 +1925,7 @@ input, textarea { font-family: inherit; }
   color: rgba(252,249,248,0.55);
   transition: color var(--t-fast);
 }
-.footer__link:hover { color: var(--c-secondary-dim); }
+.footer__link:hover { color: var(--c-white); }
 
 .footer__socials {
   display: flex;
@@ -1945,57 +1945,11 @@ input, textarea { font-family: inherit; }
   transition: background var(--t-fast), color var(--t-fast), transform var(--t-fast);
 }
 .footer__social:hover {
-  background: rgba(68,219,210,0.15);
-  color: var(--c-secondary-dim);
+  background: rgba(255,255,255,0.18);
+  color: var(--c-white);
   transform: translateY(-2px);
 }
 .footer__social .material-symbols-outlined { font-size: 1.25rem; }
-
-/* Newsletter */
-.footer__newsletter-label {
-  font-size: 0.625rem;
-  font-weight: 500;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: rgba(252,249,248,0.4);
-  margin-bottom: var(--sp-2);
-}
-
-.footer__newsletter-form {
-  display: flex;
-  align-items: center;
-  border-bottom: 1px solid rgba(255,255,255,0.2);
-  padding-bottom: var(--sp-2);
-  transition: border-color var(--t-fast);
-}
-.footer__newsletter-form:focus-within { border-color: var(--c-secondary-dim); }
-
-.footer__newsletter-input {
-  flex: 1;
-  background: transparent;
-  border: none;
-  outline: none;
-  font-size: 0.8125rem;
-  color: rgba(252,249,248,0.85);
-  padding: var(--sp-2) 0;
-}
-.footer__newsletter-input::placeholder { color: rgba(252,249,248,0.3); }
-
-.footer__newsletter-btn {
-  color: rgba(252,249,248,0.6);
-  display: flex;
-  align-items: center;
-  transition: transform var(--t-fast), color var(--t-fast);
-}
-.footer__newsletter-btn:hover { transform: translateX(3px); color: var(--c-secondary-dim); }
-.footer__newsletter-btn .material-symbols-outlined { font-size: 1.25rem; }
-
-.footer__newsletter-success {
-  font-size: 0.75rem;
-  color: var(--c-secondary-dim);
-  margin-top: var(--sp-2);
-  min-height: 1.2em;
-}
 
 /* Footer bottom */
 .footer__bottom {
@@ -2019,12 +1973,32 @@ input, textarea { font-family: inherit; }
   color: rgba(252,249,248,0.35);
 }
 
+.footer__bottom-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--sp-2);
+}
+
 .footer__legal { display: flex; gap: var(--sp-8); }
 
 .footer__legal-link {
   transition: color var(--t-fast);
 }
-.footer__legal-link:hover { color: var(--c-secondary-dim); }
+.footer__legal-link:hover { color: var(--c-white); }
+
+.footer__designed-by {
+  font-size: 0.625rem;
+  letter-spacing: 0.08em;
+  color: rgba(252,249,248,0.2);
+}
+
+.footer__designed-by-link {
+  color: rgba(252,249,248,0.35);
+  text-decoration: none;
+  transition: color var(--t-fast);
+}
+.footer__designed-by-link:hover { color: rgba(252,249,248,0.7); }
 
 /* ── TREATMENTS TABS & CAROUSEL (DESKTOP) ───────────────────── */
 .tabs-section { padding-block: var(--sp-24); background: var(--c-surface-low); }
