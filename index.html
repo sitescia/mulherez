@@ -1331,6 +1331,14 @@
   </section>
 
   <!-- ══════════════════════════════════════════
+       SECTION CONNECTOR
+  ══════════════════════════════════════════ -->
+  <div class="section-connector" aria-hidden="true">
+    <div class="section-connector__line"></div>
+    <div class="section-connector__dot"></div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
        REVIEWS
   ══════════════════════════════════════════ -->
   <section class="section reviews" id="reviews">
@@ -1635,6 +1643,16 @@
   <!-- Script -->
   <script src="main.js"></script>
   <script>
+    // ── SECTION CONNECTOR ───────────────────────────────────────
+    (function () {
+      const els = document.querySelectorAll('.section-connector__line, .section-connector__dot');
+      if (!els.length) return;
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
+      }, { threshold: 0.5 });
+      els.forEach(el => io.observe(el));
+    })();
+
     // ── REVIEWS CAROUSEL ────────────────────────────────────────
     (function () {
       const wrapper = document.querySelector('.reviews__track-wrapper');
