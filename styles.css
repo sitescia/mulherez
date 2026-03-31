@@ -2688,9 +2688,9 @@ input, textarea { font-family: inherit; }
   .testimonials__mark { font-size: 6rem; top: -1.5rem; left: -1rem; }
 
   .sanctuary__media {
+    display: block;
     width: 100%;
   }
-  /* mobile: show only first image from col-a, hide everything else */
   .sanctuary__col--b { display: none; }
   .sanctuary__col--a {
     display: block;
