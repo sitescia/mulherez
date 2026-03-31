@@ -2623,8 +2623,8 @@ input, textarea { font-family: inherit; }
   }
   .tabs-nav-top {
     justify-content: center;
-    width: 100%;
-    margin-inline: auto;
+    width: auto;
+    display: inline-flex;
   }
   .tab-btn-top { white-space: nowrap; font-size: 0.95rem; padding: 0.65rem 1.25rem; }
   
