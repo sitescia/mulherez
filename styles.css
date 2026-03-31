@@ -1554,6 +1554,7 @@ input, textarea { font-family: inherit; }
 
   .team-grid {
     display: flex;
+    gap: 0;
     transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     will-change: transform;
   }

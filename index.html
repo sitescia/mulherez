@@ -2032,7 +2032,6 @@
       if (!grid || !wrapper || !dotsContainer) return;
 
       const dots = dotsContainer.querySelectorAll('.team__dot');
-      const GAP = 16;
       const TOTAL = 3;
       let current = 0;
       let autoTimer;
@@ -2053,10 +2052,9 @@
             c.style.width = cardW + 'px';
             c.style.minWidth = cardW + 'px';
             c.style.maxWidth = cardW + 'px';
-            c.style.marginRight = GAP + 'px';
           });
           grid.style.transition = 'none';
-          grid.style.transform = 'translateX(-' + (current * (cardW + GAP)) + 'px)';
+          grid.style.transform = 'translateX(-' + (current * cardW) + 'px)';
           requestAnimationFrame(() => {
             grid.style.transition = '';
           });
@@ -2067,7 +2065,6 @@
             c.style.width = '';
             c.style.minWidth = '';
             c.style.maxWidth = '';
-            c.style.marginRight = '';
           });
         }
       }
@@ -2075,7 +2072,7 @@
       function goTo(index) {
         if (!isMobile) return;
         current = ((index % TOTAL) + TOTAL) % TOTAL;
-        grid.style.transform = 'translateX(-' + (current * (cardW + GAP)) + 'px)';
+        grid.style.transform = 'translateX(-' + (current * cardW) + 'px)';
         updateDots();
       }
 
