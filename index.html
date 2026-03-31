@@ -1556,7 +1556,16 @@
         </p>
       </div>
 
-      <div class="reviews__track-wrapper" data-reveal="up" data-delay="150">
+      <!-- Dots -->
+      <div class="reviews__dots" id="reviewsDots" aria-label="Navegação do carrossel" data-reveal="up" data-delay="150">
+        <button class="reviews__dot reviews__dot--active" data-index="0" aria-label="Review 1"></button>
+        <button class="reviews__dot" data-index="1" aria-label="Review 2"></button>
+        <button class="reviews__dot" data-index="2" aria-label="Review 3"></button>
+        <button class="reviews__dot" data-index="3" aria-label="Review 4"></button>
+        <button class="reviews__dot" data-index="4" aria-label="Review 5"></button>
+      </div>
+
+      <div class="reviews__track-wrapper" data-reveal="up" data-delay="200">
         <div class="reviews__track" id="reviewsTrack">
 
           <!-- Review 1 -->
@@ -1569,7 +1578,7 @@
               Fe e toda a equipe estão de prontidão para nos ajudar e acolher. Recomendo a clínica de olhos fechados."
             </blockquote>
             <footer class="review-card__author">
-              <div class="review-card__avatar" style="background-image: url('COLE_AQUI_FOTO_LETICIA')"
+              <div class="review-card__avatar" data-initial="L"
                 aria-label="Leticia Alves dos Santos"></div>
               <div>
                 <p class="review-card__name">Leticia Alves dos Santos</p>
@@ -1588,7 +1597,7 @@
               super à vontade, é muito respeitosa, não doi, e explica todos os passos com muita clareza."
             </blockquote>
             <footer class="review-card__author">
-              <div class="review-card__avatar" style="background-image: url('COLE_AQUI_FOTO_MARCIA')"
+              <div class="review-card__avatar" style="background-image: url('img/marcia-vieira.webp')"
                 aria-label="Marcia Vieira"></div>
               <div>
                 <p class="review-card__name">Marcia Vieira</p>
@@ -1607,7 +1616,7 @@
               ela teve paciência, já na segunda sessão já obtive resultado. Super indico para todas, muito mesmo."
             </blockquote>
             <footer class="review-card__author">
-              <div class="review-card__avatar" style="background-image: url('COLE_AQUI_FOTO_SILVANA')"
+              <div class="review-card__avatar" style="background-image: url('img/silvana-libonati.webp')"
                 aria-label="Silvana Libonati"></div>
               <div>
                 <p class="review-card__name">Silvana Libonati</p>
@@ -1626,7 +1635,7 @@
               Fernanda é extremamente cuidadosa e atenciosa — eu super indico."
             </blockquote>
             <footer class="review-card__author">
-              <div class="review-card__avatar" style="background-image: url('COLE_AQUI_FOTO_ROSELI')"
+              <div class="review-card__avatar" data-initial="R"
                 aria-label="Roseli Silva Ferreira"></div>
               <div>
                 <p class="review-card__name">Roseli Silva Ferreira</p>
@@ -1645,7 +1654,7 @@
               ficamos confortáveis, tudo bom!"
             </blockquote>
             <footer class="review-card__author">
-              <div class="review-card__avatar" style="background-image: url('COLE_AQUI_FOTO_SORAIA')"
+              <div class="review-card__avatar" style="background-image: url('img/soraia-caram.webp')"
                 aria-label="Soraia Caram"></div>
               <div>
                 <p class="review-card__name">Soraia Caram</p>
@@ -1662,7 +1671,7 @@
               Fe e toda a equipe estão de prontidão para nos ajudar e acolher. Recomendo a clínica de olhos fechados."
             </blockquote>
             <footer class="review-card__author">
-              <div class="review-card__avatar" style="background-image: url('COLE_AQUI_FOTO_LETICIA')"
+              <div class="review-card__avatar" data-initial="L"
                 aria-label="Leticia Alves dos Santos"></div>
               <div>
                 <p class="review-card__name">Leticia Alves dos Santos</p>
@@ -1678,7 +1687,7 @@
               super à vontade, é muito respeitosa, não doi, e explica todos os passos com muita clareza."
             </blockquote>
             <footer class="review-card__author">
-              <div class="review-card__avatar" style="background-image: url('COLE_AQUI_FOTO_MARCIA')"
+              <div class="review-card__avatar" style="background-image: url('img/marcia-vieira.webp')"
                 aria-label="Marcia Vieira"></div>
               <div>
                 <p class="review-card__name">Marcia Vieira</p>
@@ -1690,13 +1699,14 @@
         </div>
       </div>
 
-      <!-- Dots -->
-      <div class="reviews__dots" id="reviewsDots" aria-label="Navegação do carrossel">
-        <button class="reviews__dot reviews__dot--active" data-index="0" aria-label="Review 1"></button>
-        <button class="reviews__dot" data-index="1" aria-label="Review 2"></button>
-        <button class="reviews__dot" data-index="2" aria-label="Review 3"></button>
-        <button class="reviews__dot" data-index="3" aria-label="Review 4"></button>
-        <button class="reviews__dot" data-index="4" aria-label="Review 5"></button>
+      <!-- CTA Ver mais reviews -->
+      <div class="reviews__cta" data-reveal="up" data-delay="300">
+        <a href="https://www.google.com/maps/place/Mulherez+Guarulhos+-+Jardim+Maia/@-23.4595698,-46.5291435,17z/data=!4m17!1m8!3m7!1s0x94cef54426d0672b:0xffd56085eda1f0c6!2sAv.+Paulo+Faccini,+1477+-+Macedo,+Guarulhos+-+SP,+07111-000!3b1!8m2!3d-23.4595698!4d-46.5291435!16s%2Fg%2F11c170bg2c!3m7!1s0x94cef5053e7b796f:0x59148be75b0e3b02!8m2!3d-23.4595698!4d-46.5291435!9m1!1b1!16s%2Fg%2F11yhww3ykh?hl=en-US&entry=ttu&g_ep=EgoyMDI2MDMyOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--lg">
+          Ver mais reviews
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true" style="flex-shrink:0">
+            <path d="M5 13h11.17l-4.88 4.88c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l6.59-6.59c.39-.39.39-1.02 0-1.41l-6.59-6.59c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41L16.17 11H5c-.55 0-1 .45-1 1s.45 1 1 1z"/>
+          </svg>
+        </a>
       </div>
     </div>
   </section>
@@ -1997,6 +2007,7 @@
       wrapper.addEventListener('mouseenter', () => clearInterval(autoTimer));
       wrapper.addEventListener('mouseleave', () => { autoTimer = setInterval(next, 4000); });
     })();
+
 
     document.addEventListener("DOMContentLoaded", () => {
       // 1. Top Level Tabs (Categories)
