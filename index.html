@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Onde a precisão médica avançada encontra a arte da estética de alto padrão. Um santuário criado para a mulher sofisticada." />
+  <title>Mulherez | O Atelier Clínico</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!-- ══════════════════════════════════════════
+       PRELOADER
+  ══════════════════════════════════════════ -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader__inner">
+      <p class="preloader__brand">Mulherez</p>
+      <div class="preloader__bar-track">
+        <div class="preloader__bar" id="preloaderBar"></div>
+      </div>
+      <span class="preloader__tagline">Estética Íntima Feminina</span>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       SCROLL PROGRESS
+  ══════════════════════════════════════════ -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- ══════════════════════════════════════════
+       NAVIGATION
+  ══════════════════════════════════════════ -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#" class="nav__brand">Mulherez</a>
+
+      <div class="nav__links" id="navLinks">
+        <a href="#treatments" class="nav__link nav__link--active">Tratamentos</a>
+        <a href="#atelier" class="nav__link">O Atelier</a>
+        <a href="#team" class="nav__link">Equipe Clínica</a>
+        <a href="#wellness" class="nav__link">Bem-Estar</a>
+        <a href="#journal" class="nav__link">Contato</a>
+      </div>
+
+      <button class="btn btn--primary btn--sm nav-cta" data-magnetic>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="14" height="14"
+          aria-hidden="true" style="flex-shrink:0">
+          <path
+            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg>
+        <span class="nav-cta-text">Agendar Avaliação</span>
+      </button>
+
+      <button class="nav__burger" id="navBurger" aria-label="Abrir navegação" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mob-menu" id="mobMenu" aria-hidden="true">
+    <div class="mob-menu__inner">
+      <a href="#treatments" class="mob-menu__link">Tratamentos</a>
+      <a href="#atelier" class="mob-menu__link">O Atelier</a>
+      <a href="#team" class="mob-menu__link">Equipe Clínica</a>
+      <a href="#wellness" class="mob-menu__link">Bem-Estar</a>
+      <a href="#journal" class="mob-menu__link">Contato</a>
+      <button class="btn btn--primary btn--full">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="14" height="14"
+          aria-hidden="true" style="flex-shrink:0">
+          <path
+            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg>
+        Agendar Consulta
+      </button>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       HERO
+  ══════════════════════════════════════════ -->
+  <header class="hero" id="hero">
+
+    <!-- ── HERO BACKGROUND AMBIENCE (purely decorative, CSS-animated) ── -->
+    <div class="hero__bg" aria-hidden="true">
+      <div class="hero__orb hero__orb--1"></div>
+      <div class="hero__orb hero__orb--2"></div>
+      <div class="hero__sheen hero__sheen--1"></div>
+      <div class="hero__sheen hero__sheen--2"></div>
+      <div class="hero__sheen hero__sheen--3"></div>
+      <svg class="hero__grid" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="hero-grid-pat" width="52" height="52" patternUnits="userSpaceOnUse"
+            patternTransform="rotate(32)">
+            <path d="M52 0L0 0 0 52" fill="none" stroke="rgba(75,25,75,0.042)" stroke-width="0.5" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#hero-grid-pat)" />
+      </svg>
+    </div>
+
+    <!-- Floral portrait — bloom emerges from the right, masked -->
+    <div class="hero__portrait" aria-hidden="true">
+      <img src="img/Dra._Mirelle_Ruivo.webp" alt="Dra. Mirelle Ruivo" class="hero__portrait-img" />
+    </div>
+
+    <div class="container">
+      <div class="hero__layout">
+        <div class="hero__body">
+
+          <span class="eyebrow hero__eyebrow" data-reveal data-delay="0">Resultados Naturais</span>
+
+          <h1 class="hero__title" data-reveal data-delay="120">
+            Estética
+            <em class="hero__em">Íntima e facial<br>com tecnologia<br>a laser</em>
+          </h1>
+
+          <p class="hero__sub" data-reveal data-delay="240">
+            A Mulherez é a primeira rede de estética íntima do Brasil, com método
+            inovador e atendimento personalizado para valorizar sua autoestima com segurança.
+          </p>
+
+          <div class="hero__actions" data-reveal data-delay="360">
+            <button class="btn btn--pill-dark" data-magnetic>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="15" height="15"
+                aria-hidden="true" style="flex-shrink:0">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+              </svg>
+              Agendar Avaliação
+            </button>
+            <a href="#treatments" class="hero__text-link">
+              Procedimentos <span aria-hidden="true">→</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ══════════════════════════════════════════
+       SCIENTIFIC AUTHORITY — STATS
+  ══════════════════════════════════════════ -->
+  <section class="stats-band" id="stats">
+    <div class="container">
+      <p class="stats-band__eyebrow" data-reveal="up"> De Mulherez para Mulheres</p>
+      <div class="stats-grid">
+
+        <div class="stat" data-reveal="up" data-delay="0">
+          <div class="stat__row">
+            <span class="stat__num" data-count="10">0</span>
+            <span class="stat__unit">+</span>
+          </div>
+          <p class="stat__label">Anos de Experiência</p>
+        </div>
+
+        <div class="stat" data-reveal="up" data-delay="100">
+          <div class="stat__row">
+            <span class="stat__num" data-count="50">0</span>
+            <span class="stat__unit">k</span>
+          </div>
+          <p class="stat__label">Clientes Atendidas</p>
+        </div>
+
+        <div class="stat" data-reveal="up" data-delay="200">
+          <div class="stat__row">
+            <span class="stat__num" data-count="100">0</span>
+            <span class="stat__unit">k</span>
+          </div>
+          <p class="stat__label">Procedimentos Feitos</p>
+        </div>
+
+        <div class="stat" data-reveal="up" data-delay="300">
+          <div class="stat__row">
+            <span class="stat__num" data-count="100">0</span>
+            <span class="stat__unit">%</span>
+          </div>
+          <p class="stat__label">Taxa de Satisfação</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       TRATAMENTOS ESTÉTICOS PERSONALIZADOS (TABS)
+  ══════════════════════════════════════════ -->
+  <section class="section tabs-section" id="custom-treatments">
+    <div class="container">
+      <div class="section-header" data-reveal="up">
+        <div>
+          <h2 class="section-title" style="margin-bottom: 0;">Tratamentos Estéticos<br>Personalizados</h2>
+        </div>
+      </div>
+
+      <div class="tabs-container" data-reveal="up" data-delay="100">
+        <!-- Tabs Nav (Top Level) -->
+        <div class="tabs-nav-top">
+          <button class="tab-btn-top active" data-tab="intima">Íntima</button>
+          <button class="tab-btn-top" data-tab="facial">Facial</button>
+          <button class="tab-btn-top" data-tab="corporal">Corporal</button>
+        </div>
+
+        <!-- Tab Contents -->
+        <div class="tabs-content">
+          <!-- Íntima -->
+          <div class="tab-pane active" id="tab-intima">
+            <div class="stepper-carousel">
+              <!-- Left: Progress List -->
+              <div class="stepper-menu">
+                <button class="stepper-btn active" data-index="0">
+                  <div class="stepper-progress"><div class="stepper-bar"></div></div>
+                  <span class="stepper-title">Laser íntimo</span>
+                </button>
+                <button class="stepper-btn" data-index="1">
+                  <div class="stepper-progress"><div class="stepper-bar"></div></div>
+                  <span class="stepper-title">Peeling íntimo</span>
+                </button>
+                <button class="stepper-btn" data-index="2">
+                  <div class="stepper-progress"><div class="stepper-bar"></div></div>
+                  <span class="stepper-title">Preenchimento íntimo</span>
+                </button>
+                <button class="stepper-btn" data-index="3">
+                  <div class="stepper-progress"><div class="stepper-bar"></div></div>
+                  <span class="stepper-title">Bioestimuladores</span>
+                </button>
+                <button class="stepper-btn" data-index="4">
+                  <div class="stepper-progress"><div class="stepper-bar"></div></div>
+                  <span class="stepper-title">Fios de PDO</span>
+                </button>
+              </div>
+
+              <!-- Right: Visual Cards -->
+              <div class="stepper-content">
+                <div class="stepper-card active">
+                  <div class="stepper-card__img"><img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=600&q=80" alt="Laser íntimo" loading="lazy"></div>
+                  <div class="stepper-card__info">
+                    <h4>Laser íntimo</h4>
+                    <p>Rejuvenescimento não cirúrgico</p>
+                  </div>
+                </div>
+                <div class="stepper-card">
+                  <div class="stepper-card__img"><img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=600&q=80" alt="Peeling íntimo" loading="lazy"></div>
+                  <div class="stepper-card__info">
+                    <h4>Peeling íntimo</h4>
+                    <p>Clareamento e renovação celular</p>
+                  </div>
+                </div>
+                <div class="stepper-card">
+                  <div class="stepper-card__img"><img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=600&q=80" alt="Preenchimento íntimo" loading="lazy"></div>
+                  <div class="stepper-card__info">
+                    <h4>Preenchimento íntimo</h4>
+                    <p>Restauração de volume e estética</p>
+                  </div>
+                </div>
+                <div class="stepper-card">
+                  <div class="stepper-card__img"><img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=600&q=80" alt="Bioestimuladores" loading="lazy"></div>
+                  <div class="stepper-card__info">
+                    <h4>Bioestimuladores</h4>
+                    <p>Estímulo de colágeno natural</p>
+                  </div>
+                </div>
+                <div class="stepper-card">
+                  <div class="stepper-card__img"><img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=600&q=80" alt="Fios de PDO" loading="lazy"></div>
+                  <div class="stepper-card__info">
+                    <h4>Fios de PDO</h4>
+                    <p>Sustentação e firmeza dos tecidos</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Facial -->
+          <div class="tab-pane" id="tab-facial">
+            <div class="stepper-carousel">
+              <!-- Left: Progress List -->
+              <div class="stepper-menu">
+                <button class="stepper-btn active" data-index="0">
+                  <div class="stepper-progress"><div class="stepper-bar"></div></div>
+                  <span class="stepper-title">Blefaroplastia a laser</span>
+                </button>
+                <button class="stepper-btn" data-index="1">
+                  <div class="stepper-progress"><div class="stepper-bar"></div></div>
+                  <span class="stepper-title">Toxina botulínica</span>
+                </button>
+                <button class="stepper-btn" data-index="2">
+                  <div class="stepper-progress"><div class="stepper-bar"></div></div>
+                  <span class="stepper-title">Preenchimento facial</span>
+                </button>
+                <button class="stepper-btn" data-index="3">
+                  <div class="stepper-progress"><div class="stepper-bar"></div></div>
+                  <span class="stepper-title">Bioestimuladores</span>
+                </button>
+                <button class="stepper-btn" data-index="4">
+                  <div class="stepper-progress"><div class="stepper-bar"></div></div>
+                  <span class="stepper-title">Fios de sustentação</span>
+                </button>
+              </div>
+
+              <!-- Right: Visual Cards -->
+              <div class="stepper-content">
+                <div class="stepper-card active">
+                  <div class="stepper-card__img"><img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=600&q=80" alt="Blefaroplastia a laser" loading="lazy"></div>
+                  <div class="stepper-card__info">
+                    <h4>Blefaroplastia a laser</h4>
+                    <p>Rejuvenescimento do olhar</p>
+                  </div>
+                </div>
+                <div class="stepper-card">
+                  <div class="stepper-card__img"><img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=600&q=80" alt="Toxina botulínica" loading="lazy"></div>
+                  <div class="stepper-card__info">
+                    <h4>Toxina botulínica</h4>
+                    <p>Suavização de rugas dinâmicas</p>
+                  </div>
+                </div>
+                <div class="stepper-card">
+                  <div class="stepper-card__img"><img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=600&q=80" alt="Preenchimento facial" loading="lazy"></div>
+                  <div class="stepper-card__info">
+                    <h4>Preenchimento facial</h4>
+                    <p>Harmonização de contornos</p>
+                  </div>
+                </div>
+                <div class="stepper-card">
+                  <div class="stepper-card__img"><img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=600&q=80" alt="Bioestimuladores" loading="lazy"></div>
+                  <div class="stepper-card__info">
+                    <h4>Bioestimuladores</h4>
+                    <p>Firmeza e qualidade da pele</p>
+                  </div>
+                </div>
+                <div class="stepper-card">
+                  <div class="stepper-card__img"><img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=600&q=80" alt="Fios de sustentação" loading="lazy"></div>
+                  <div class="stepper-card__info">
+                    <h4>Fios de sustentação</h4>
+                    <p>Lifting facial não cirúrgico</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Corporal -->
+          <div class="tab-pane" id="tab-corporal">
+            <div class="stepper-carousel">
+              <!-- Left: Progress List -->
+              <div class="stepper-menu">
+                <button class="stepper-btn active" data-index="0">
+                  <div class="stepper-progress"><div class="stepper-bar"></div></div>
+                  <span class="stepper-title">Bioestimuladores</span>
+                </button>
+                <button class="stepper-btn" data-index="1">
+                  <div class="stepper-progress"><div class="stepper-bar"></div></div>
+                  <span class="stepper-title">Preenchimento de glúteo</span>
+                </button>
+                <button class="stepper-btn" data-index="2">
+                  <div class="stepper-progress"><div class="stepper-bar"></div></div>
+                  <span class="stepper-title">Enzimas</span>
+                </button>
+                <button class="stepper-btn" data-index="3">
+                  <div class="stepper-progress"><div class="stepper-bar"></div></div>
+                  <span class="stepper-title">Carboxiterapia</span>
+                </button>
+                <button class="stepper-btn" data-index="4">
+                  <div class="stepper-progress"><div class="stepper-bar"></div></div>
+                  <span class="stepper-title">Radiofrequência</span>
+                </button>
+              </div>
+
+              <!-- Right: Visual Cards -->
+              <div class="stepper-content">
+                <div class="stepper-card active">
+                  <div class="stepper-card__img"><img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=600&q=80" alt="Bioestimuladores" loading="lazy"></div>
+                  <div class="stepper-card__info">
+                    <h4>Bioestimuladores</h4>
+                    <p>Combate à flacidez corporal</p>
+                  </div>
+                </div>
+                <div class="stepper-card">
+                  <div class="stepper-card__img"><img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=600&q=80" alt="Preenchimento de glúteo" loading="lazy"></div>
+                  <div class="stepper-card__info">
+                    <h4>Preenchimento de glúteo</h4>
+                    <p>Remodelação e volume glúteo</p>
+                  </div>
+                </div>
+                <div class="stepper-card">
+                  <div class="stepper-card__img"><img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=600&q=80" alt="Enzimas" loading="lazy"></div>
+                  <div class="stepper-card__info">
+                    <h4>Enzimas</h4>
+                    <p>Tratamento para gordura localizada</p>
+                  </div>
+                </div>
+                <div class="stepper-card">
+                  <div class="stepper-card__img"><img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=600&q=80" alt="Carboxiterapia" loading="lazy"></div>
+                  <div class="stepper-card__info">
+                    <h4>Carboxiterapia</h4>
+                    <p>Redução de celulite e estrias</p>
+                  </div>
+                </div>
+                <div class="stepper-card">
+                  <div class="stepper-card__img"><img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=600&q=80" alt="Radiofrequência" loading="lazy"></div>
+                  <div class="stepper-card__info">
+                    <h4>Radiofrequência</h4>
+                    <p>Firmeza e contorno corporal</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       SOFT CTA - TREATMENTS
+  ══════════════════════════════════════════ -->
+  <section class="section soft-cta-section" id="treatments-cta">
+    <div class="container">
+      <div class="soft-cta-box" data-reveal="up">
+        <h3 class="soft-cta-title">Não sabe qual tratamento é ideal para você?</h3>
+        <a href="https://wa.me/5511999999999" target="_blank" class="soft-cta-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18"
+            aria-hidden="true" style="flex-shrink:0">
+            <path
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+          </svg>
+          <span>Agende sua avaliação</span>
+        </a>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       THE CLINIC / SANCTUARY
+  ══════════════════════════════════════════ -->
+  <section class="section sanctuary" id="atelier">
+    <div class="container">
+      <div class="sanctuary__layout">
+
+        <!-- Image mosaic -->
+        <div class="sanctuary__media" data-reveal="left">
+          <div class="sanctuary__col sanctuary__col--a">
+            <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&w=800&q=80"
+              alt="Advanced laser equipment" class="sanctuary__img sanctuary__img--sq" loading="lazy" />
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWXyhnQoJvG-CDpcLtfL-3RDPxoJn36_DypQef5OVrmdLYmocCunFKYHtRIoKBYX0xUtzifsY1NPUES9LVRXU5i247WBYRe_arAod2IyDzTWu73JMm7Qh0W6wT2f2xJ5xEe3z6YcZdvNTgJV0eBxue88t8ttvsmEfxxmtS7y9Z4KLPBbJGs_BMYF18OplqXsifpzXZr6LECdLQmFFxpLoVaoeONQpe0tisHunVvCzErtokHlH9aWx3V-Ozj7evsQk-nLFbGnYcC8o"
+              alt="Luxury treatment room" class="sanctuary__img sanctuary__img--tall" loading="lazy" />
+          </div>
+          <div class="sanctuary__col sanctuary__col--b">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEbJxy3jKseekP161Tfo7YrD612BsoLUHw5PvipP_0mC9v4b4q8C0nX3Gfyw3mliWedxNukAWbJFvJRDtZgXhlmS1KAqhH0-dmBG7I5sunpjbT2ZCjVV1-36RE8AHuAyGGqfBeQHNaDUB_C8kL2IDQwTHwVogxtsudLArr_vtRm7QrglcAHblBOkDqZfmBLYnNlA6SBg_SOQMyoiPFQ4RI5laKZ_NHycF52wzihKDeu6Jar3i8CvxHvzrwyWY43FUUea93Ge9Krmg"
+              alt="Scientific purity" class="sanctuary__img sanctuary__img--tall" loading="lazy" />
+            <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=800&q=80"
+              alt="Modern medical laboratory" class="sanctuary__img sanctuary__img--sq" loading="lazy" />
+          </div>
+        </div>
+
+        <!-- Text -->
+        <div class="sanctuary__text" data-reveal="right">
+          <span class="eyebrow">Tecnologia / Ambiente</span>
+          <h2 class="section-title">Tecnologia e cuidado<br>em cada detalhe</h2>
+          <p class="sanctuary__desc">
+            Ambiente moderno, equipamentos avançados e técnicas atualizadas para garantir segurança e conforto.
+          </p>
+          <ul class="sanctuary__list">
+            <li class="sanctuary__item" data-reveal="up" data-delay="0">
+              <span class="material-symbols-outlined sanctuary__icon" aria-hidden="true">verified</span>
+              Equipamentos modernos
+            </li>
+            <li class="sanctuary__item" data-reveal="up" data-delay="100">
+              <span class="material-symbols-outlined sanctuary__icon" aria-hidden="true">verified</span>
+              Técnicas atualizadas
+            </li>
+            <li class="sanctuary__item" data-reveal="up" data-delay="200">
+              <span class="material-symbols-outlined sanctuary__icon" aria-hidden="true">verified</span>
+              Ambiente discreto
+            </li>
+            <li class="sanctuary__item" data-reveal="up" data-delay="300">
+              <span class="material-symbols-outlined sanctuary__icon" aria-hidden="true">verified</span>
+              Atendimento humanizado
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       TREATMENT PORTFOLIO
+  ══════════════════════════════════════════ -->
+  <section class="section" id="treatments">
+    <div class="container">
+
+      <div class="section-header" data-reveal="up">
+        <div>
+          <span class="eyebrow">O Portfólio de Tratamentos</span>
+          <h2 class="section-title">Intervenções Médicas<br>Selecionadas</h2>
+        </div>
+        <p class="section-note">
+          Cada procedimento é um diálogo entre a necessidade clínica e a aspiração estética.
+        </p>
+      </div>
+
+      <div class="cards-grid">
+
+        <div class="card card--treatment" data-reveal="up" data-delay="0">
+          <div class="card__media">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjRdQQzq21MN7xfc8JJ4nD5ZZ5tejTwIAQS7Y4V33DNKyzpLLqfy9EYG0TiTYvOC0YGkBSw7sWreuLGOmhziy3RGJlBWPAL8fWmgQCo7n3_rXNwmxJ05ob4LiB_bm3qD49_rIisUQ315VTgvG2Zxc0pNyagd7QqeJqXapQsy1eplqA-KeA9WCsVza4EidAoMvfBtnaIZGC6IuaylIFXO3riyfsU6dpwiSKMWlxui58zghtQJcf_3EH8-R2pWT5S-hn27L9_PShnZI"
+              alt="Facial contouring" class="card__img" loading="lazy" />
+            <div class="card__veil"></div>
+          </div>
+          <div class="card__body">
+            <span class="tag">Facial</span>
+            <h4 class="card__title">Contorno Estrutural</h4>
+            <p class="card__text">Restaurando as proporções douradas da silhueta feminina por meio de microajustes
+              precisos.</p>
+          </div>
+        </div>
+
+        <div class="card card--treatment card--offset-md" data-reveal="up" data-delay="150">
+          <div class="card__media">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkH26ww15ZI9Ej1k-47LVHbcyWsdwI1KGApVdRQvH1Ht63xnvjLyFO2EhYC_ciBMNjSLzlKQCtQ5B9c1MefKG8ZN4xaOQDuip_AVb1ako0DB_pKPV9ne387fG8qxXJkq-2pmp66qB9UELuoU1fy22plycZNn72SRJMLoEr57xzFyekGp-BYTebdD-wCoAaZJaL7Y-nYyZZqHPpU-49kUGBhHfFak2eVctxiJayEXiUwRJ5KltjaeanpJPVOTjU-5l6M8Dxw3xAaqs"
+              alt="Luminous skin resurfacing" class="card__img" loading="lazy" />
+            <div class="card__veil"></div>
+          </div>
+          <div class="card__body">
+            <span class="tag">Dérmico</span>
+            <h4 class="card__title">Resurfacing Luminoso</h4>
+            <p class="card__text">Utilizando protocolos avançados de laser para revelar o brilho natural da pele.</p>
+          </div>
+        </div>
+
+        <div class="card card--treatment card--offset-sm" data-reveal="up" data-delay="300">
+          <div class="card__media">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgiQU21klPtvwu60-GAFS-ReUn9Bd9dNTRWCT5gAxjgQkTcFBOftN8hGJi8EF2O0xXQ9Xm40THIBTQyDJFKwMBT8d0mCLCF6crmYbi7vSfFFwUz1mwn3T-nXzb7GfqEZbsycevlNaiLVuzx2DKN3OIWpzHK-am1Y8FhsNiCz4b-50fWFuqZu1QBQTKsihk1vMdZsZ80s00gyyDv4HEsb5hO5KZQL-XqpaTlbk1KDrfL5mT3L6Ys_1-wnr4klck76mAqb3msZfPdT8"
+              alt="Cellular ritual" class="card__img" loading="lazy" />
+            <div class="card__veil"></div>
+          </div>
+          <div class="card__body">
+            <span class="tag">Longevidade</span>
+            <h4 class="card__title">O Ritual Celular</h4>
+            <p class="card__text">Medicina regenerativa focada na saúde celular e na vitalidade a longo prazo.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       BEFORE & AFTER
+  ══════════════════════════════════════════ -->
+  <section class="section ba-section" id="results">
+    <div class="container">
+
+      <div class="ba-head" data-reveal="up">
+        <h2 class="ba-title">Transformações Sutis. <em>Impacto Significativo.</em></h2>
+        <p class="ba-desc">Nossos resultados são medidos não pelo que se vê, mas pela confiança que emana de dentro.
+          Observe o poder da precisão.</p>
+      </div>
+
+      <div class="ba-layout">
+
+        <!-- Interactive before/after slider -->
+        <div class="ba-slider-wrap" data-reveal="left">
+          <div class="ba-slider" id="baSlider" role="slider" aria-label="Comparação antes e depois" aria-valuemin="0"
+            aria-valuemax="100" aria-valuenow="50">
+            <!-- Before image (base) -->
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuApoKhm85Rz3LZKsfY85Y0HHDEcaI-tClryI0XeFOpgoZITHkUuEbpqVxbhGgyKp6ovCbPj8L1mtO8fHkYOL9pH05WWAo7QrnT9gN0UcggJPC2_uok_HTdYoc0P8zXW5bMHrbMiKC5beO9iepq4ZofL390Wt3MCtUUCMQGxfiThudQK4mDu3-8vr9DctCSmRVCyENUcLnHIIKQLFr14GoQ2l2onOEwtizfQk6lb5OFYp_THvDxDYFhaO-xuw-rFk2aAEV1H341zn-c"
+              alt="Antes — Base" class="ba-slider__before" />
+
+            <!-- After image (clipped) -->
+            <div class="ba-slider__after" id="baAfter">
+              <img
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-3ehcXpSsH2FbenPyftdpDE68HVgS543PqZmPnhRQwSBFyC0xqfWMklNMoCPsEhM3d02EPD2uCpQjDBe42By_0tPVVKgxX13HG5L4Ay3vloYdh9xio0cXyO_Hnsh9xOYq6dpyuytefo4RHKivIXUj66JwjCUGL1m14NducRCqDEQzeJ1iTNDqL5lg1ttYDB_OoeN7Pu2Z00tKTdQrSUMFqmfxNmzrm89e4ngBrssSp-Ht89Eozuos9_fi35kQnJmrQtRWreUS6pA"
+                alt="Depois — Pós-Atelier" class="ba-slider__after-img" />
+            </div>
+
+            <!-- Drag handle -->
+            <div class="ba-slider__handle" id="baHandle">
+              <div class="ba-slider__line"></div>
+              <button class="ba-slider__btn" aria-label="Arraste para comparar">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+                  <path d="M8 5L2 11L8 17M14 5L20 11L14 17" stroke="currentColor" stroke-width="1.5"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+            </div>
+
+            <span class="ba-label ba-label--left">Antes</span>
+            <span class="ba-label ba-label--right">Pós-Atelier</span>
+          </div>
+        </div>
+
+        <!-- Info panel -->
+        <div class="ba-info" data-reveal="right">
+          <div class="ba-protocol">
+            <h4 class="ba-protocol__title">Protocolo: O Lifting Esculpido</h4>
+            <p class="ba-protocol__text">
+              Uma combinação de aplicação estratégica de ácido hialurônico e ultrassom microfocalizado
+              para redefinir o terço inferior do rosto.
+            </p>
+          </div>
+          <div class="ba-tags">
+            <span class="ba-tag">Sem Cirurgia</span>
+            <span class="ba-tag">Sem Recuperação</span>
+            <span class="ba-tag">Revisão em 6 Meses</span>
+          </div>
+          <a href="#" class="ba-cta">
+            Ver Estudo de Caso Completo
+            <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       REVIEWS / TESTIMONIALS
+  ══════════════════════════════════════════ -->
+  <section class="section testimonials" id="testimonials">
+    <div class="container">
+      <div class="testimonials__layout">
+
+        <div class="testimonials__content" data-reveal="up">
+          <div class="testimonials__mark" aria-hidden="true">"</div>
+          <h2 class="testimonials__heading">A Experiência<br>Mulherez</h2>
+
+          <!-- Carousel -->
+          <div class="testi-carousel" id="testiCarousel" aria-live="polite">
+            <!-- Items injected by JS -->
+          </div>
+
+          <div class="testimonials__controls">
+            <button class="testi-arrow" id="testiPrev" aria-label="Depoimento anterior">
+              <span class="material-symbols-outlined">chevron_left</span>
+            </button>
+            <div class="testi-dots" id="testiDots" role="tablist" aria-label="Navegação de depoimentos"></div>
+            <button class="testi-arrow" id="testiNext" aria-label="Próximo depoimento">
+              <span class="material-symbols-outlined">chevron_right</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="testimonials__visual" data-reveal="right">
+          <img
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-75P6ErW5dWi8aO1YQ76AVnFT18gHYL5acwBl67K7Z_V__sUwSBoKZgaa_pS9vpDfbLn4ZzQA2ITlBMrxL871dU86OsHDN5kPyeaiMF_2drMm3Ay32gEC9kNoPmRTnSB-vOfFu5SIttere4EPCZXqqim8TmR25k21Z1tkkAmcSyUQT1Kzi518W3Rg5LGtQNLtgiZhrKQXyDlCCASUeFYtNdFTg2LF1r8YMQ3evEUVs2dilNRvZAvLcHCKTYsG9pGeW2tkkznw0VU"
+            alt="Luxury Mulherez clinic interior" class="testimonials__img" loading="lazy" />
+          <div class="testimonials__glow" aria-hidden="true"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       MEDICAL TEAM
+  ══════════════════════════════════════════ -->
+  <section class="section team" id="team">
+    <div class="container">
+
+      <div class="section-center" data-reveal="up">
+        <span class="eyebrow">Liderança Médica</span>
+        <h2 class="section-title">Mãos Especializadas</h2>
+      </div>
+
+      <div class="team-grid">
+
+        <div class="doctor" data-reveal="up" data-delay="0">
+          <div class="doctor__photo">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYqTOVY1BxxQRoZryZpm5winesjB7VUvii-VCGY6BWrxCBQPDugq0oI6n7hJtdZJPy_VIcrpma8G98e_sYT6TnHAuzPZCZPmPP8JNNPD0JkYyOl6l58zUJUyy3wY-3UtKuD0KF6uyF6CU49IGEKrTNn2TGvfjttbDlWDpW1OiPLcY8sU05DyiNvDsm7OxMrn5R5TMEVCTTUcCUyagmMNzUxnRJ8jwxzvDSkDQf4aWF6X2ilIZQN0wgU2OB7xQ0wb8LbJHfzm45dPE"
+              alt="Dr. Elena Thorne" class="doctor__img" loading="lazy" />
+          </div>
+          <h4 class="doctor__name">Dr. Elena Thorne</h4>
+          <p class="doctor__role">Diretora Médica e Fundadora</p>
+          <p class="doctor__bio">Pioneira em estética facial estrutural com mais de 15 anos de formação cirúrgica.</p>
+        </div>
+
+        <div class="doctor" data-reveal="up" data-delay="150">
+          <div class="doctor__photo">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLFC3CrOUQJjyKlWbplRW2KBqBo8lJU11sGNq2nlHdsMb51N8_TGEv4vJGCnJ3v33y0jEtWfdpaA0V8fdOZ4wZg9eBr5fxksUUuUCyQ7ltkH1r0DjYPzz-Re4sTu3MYq6uO0ZvFMjJdk_m-erzf8MbFNqs8Ex15jW3-gcY-Fyn9XlX61djNzH8O_ZimN3xQcK34gGu6e4yE1eaR6juKbtRgXgYBV_Gxvn_3MTiS0OUBqzwKipzdwLudD6b_vfSSgf8G-HatbjpCLE"
+              alt="Dr. Sarah Khalil" class="doctor__img" loading="lazy" />
+          </div>
+          <h4 class="doctor__name">Dr. Sarah Khalil</h4>
+          <p class="doctor__role">Líder em Dermatologia</p>
+          <p class="doctor__bio">Especialista em regeneração celular e protocolos avançados de laser.</p>
+        </div>
+
+        <div class="doctor" data-reveal="up" data-delay="300">
+          <div class="doctor__photo">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMW6lXi6rtNqCSTsjDqWv_CbDt7a21NuTxC4PPlxvOT8B1WhY8oumyvE3crxkGtlsE2pcxrVax9VtQZTeusw2vuh1nf2s642JbAapN2zjJYBpvpfDPX130xlWJHtF22Zo6EnC0n7PgJDenUaSszUoOz29R6UJWu21w7xBf9-Jk-tD4YJ_KR92fmjjomtWxCsUPLSTbrrnrad0Y1oMNdRdTaKKQ3y21Lffw0x4Ze--Z_oykgzZ0pp-YH8FEG4ISfuIrgJDoa1B2XP8"
+              alt="Dr. Sofia Rossi" class="doctor__img" loading="lazy" />
+          </div>
+          <h4 class="doctor__name">Dr. Sofia Rossi</h4>
+          <p class="doctor__role">Consultora em Longevidade</p>
+          <p class="doctor__bio">Especialista em equilíbrio hormonal e otimização metabólica para a longevidade
+            feminina.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       OUR ETHOS — DARK SECTION
+  ══════════════════════════════════════════ -->
+  <section class="ethos" id="wellness">
+    <div class="ethos__decor" aria-hidden="true"></div>
+    <div class="container">
+      <div class="ethos__body">
+        <span class="eyebrow eyebrow--light" data-reveal="up">Nossa Filosofia</span>
+        <h2 class="ethos__title" data-reveal="up" data-delay="100">O Toque Invisível</h2>
+        <blockquote class="ethos__quote" data-reveal="up" data-delay="200">
+          "A verdadeira beleza é a ausência de esforço evidente. Operamos sob o princípio da
+          'Paciente Única' — onde sua jornada é totalmente isolada, personalizada e protegida
+          do mundo exterior."
+        </blockquote>
+        <div class="ethos__pillars">
+          <div class="ethos__pillar" data-reveal="up" data-delay="300">
+            <h4 class="ethos__pillar-title">Privacidade Clínica</h4>
+            <p class="ethos__pillar-text">Entradas discretas e transições privadas entre as suítes garantem anonimato
+              total para cada paciente.</p>
+          </div>
+          <div class="ethos__pillar" data-reveal="up" data-delay="400">
+            <h4 class="ethos__pillar-title">Continuidade Personalizada</h4>
+            <p class="ethos__pillar-text">Uma assessora dedicada gerencia cada etapa do seu plano estético de longo
+              prazo.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       VISIT THE ATELIER
+  ══════════════════════════════════════════ -->
+  <section class="section visit" id="journal">
+    <div class="container">
+      <div class="visit__layout">
+
+        <div class="visit__info" data-reveal="left">
+          <h2 class="section-title">Venha nos<br>Visitar</h2>
+          <p class="visit__lead">
+            Localizado no coração do distrito médico, nosso Atelier principal é o epicentro
+            da inovação estética.
+          </p>
+
+          <div class="visit__contacts">
+            <div class="visit__contact">
+              <div class="visit__icon-box">
+                <span class="material-symbols-outlined" aria-hidden="true">location_on</span>
+              </div>
+              <div>
+                <h5 class="visit__contact-title">O Atelier Principal</h5>
+                <p class="visit__contact-text">
+                  Av. das Américas, 3434 — Sala 400<br>Rio de Janeiro, RJ
+                </p>
+              </div>
+            </div>
+            <div class="visit__contact">
+              <div class="visit__icon-box">
+                <span class="material-symbols-outlined" aria-hidden="true">call</span>
+              </div>
+              <div>
+                <h5 class="visit__contact-title">Consultas Privadas</h5>
+                <p class="visit__contact-text">
+                  +55 21 99999-0000<br>contato@mulherez.com
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn btn--primary btn--lg btn--icon" data-magnetic>
+            Agendar Consulta Privada
+            <span class="material-symbols-outlined" aria-hidden="true">calendar_month</span>
+          </button>
+        </div>
+
+        <div class="visit__map" data-reveal="right">
+          <!--
+            ╔══════════════════════════════════════════════════════╗
+            ║  GOOGLE MAPS EMBED                                   ║
+            ║  1. Acesse maps.google.com e busque o endereço       ║
+            ║  2. Clique em "Compartilhar" → "Incorporar um mapa"  ║
+            ║  3. Copie o link do src="..." e cole abaixo          ║
+            ╚══════════════════════════════════════════════════════╝
+          -->
+          <iframe class="visit__map-frame" src="COLE_AQUI_O_LINK_DO_GOOGLE_MAPS_EMBED" width="100%" height="100%"
+            style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            title="Localização Mulherez Clinical Atelier"></iframe>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       FINAL CTA
+  ══════════════════════════════════════════ -->
+  <section class="cta-band" id="cta">
+    <div class="container">
+      <div class="cta-band__inner" data-reveal="up">
+        <h2 class="cta-band__title">Comece Sua <em>Transformação</em></h2>
+        <p class="cta-band__sub">
+          A jornada rumo à elegância refinada começa com uma única consulta abrangente.
+        </p>
+        <div class="cta-band__btns">
+          <button class="btn btn--primary btn--xl" data-magnetic>Agendar Sua Consulta</button>
+          <button class="btn btn--outline btn--xl" data-magnetic>Solicitar Catálogo</button>
+        </div>
+        <p class="cta-band__note">
+          Disponibilidade limitada. Prioridade para indicações de pacientes existentes.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="footer__top">
+      <div class="footer__brand-col">
+        <div class="footer__brand">Mulherez</div>
+        <p class="footer__tagline">
+          A interseção entre a ciência clínica avançada e a arte estética de alto padrão.
+          Criado exclusivamente para a mulher moderna e exigente.
+        </p>
+      </div>
+
+      <div class="footer__col">
+        <span class="footer__heading">Tratamentos</span>
+        <ul class="footer__list">
+          <li><a href="#" class="footer__link">Contorno Facial</a></li>
+          <li><a href="#" class="footer__link">Regeneração Dérmica</a></li>
+          <li><a href="#" class="footer__link">Medicina da Longevidade</a></li>
+          <li><a href="#" class="footer__link">Rituais Spa do Atelier</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <span class="footer__heading">Experiência</span>
+        <ul class="footer__list">
+          <li><a href="#" class="footer__link">O Atelier</a></li>
+          <li><a href="#" class="footer__link">Autoridade Científica</a></li>
+          <li><a href="#" class="footer__link">Portal da Paciente</a></li>
+          <li><a href="#" class="footer__link">Revista</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <span class="footer__heading">Siga-nos</span>
+        <div class="footer__socials">
+          <a href="#" class="footer__social" aria-label="Share">
+            <span class="material-symbols-outlined">share</span>
+          </a>
+          <a href="#" class="footer__social" aria-label="Instagram">
+            <span class="material-symbols-outlined">camera</span>
+          </a>
+        </div>
+        <div class="footer__newsletter">
+          <p class="footer__newsletter-label">Cadastre-se na newsletter</p>
+          <form class="footer__newsletter-form" id="newsletterForm" novalidate>
+            <input type="email" class="footer__newsletter-input" placeholder="seu@email.com"
+              aria-label="Endereço de e-mail" required />
+            <button type="submit" class="footer__newsletter-btn" aria-label="Subscribe">
+              <span class="material-symbols-outlined">arrow_forward</span>
+            </button>
+          </form>
+          <p class="footer__newsletter-success" id="newsletterSuccess" aria-live="polite"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p class="footer__copy">
+        &copy; 2024 Mulherez Editorial Experience. Todos os direitos reservados. Excelência em Governança Clínica.
+      </p>
+      <div class="footer__legal">
+        <a href="#" class="footer__legal-link">Política de Privacidade</a>
+        <a href="#" class="footer__legal-link">Termos de Uso</a>
+        <a href="#" class="footer__legal-link">Acessibilidade</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script src="main.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // 1. Top Level Tabs (Categories)
+      const tabBtnsTop = document.querySelectorAll('.tab-btn-top');
+      const tabPanes = document.querySelectorAll('.tab-pane');
+
+      // 2. Stepper Logic Settings
+      let currentStepperInterval = null;
+      const STEPPER_DURATION = 5000; // 5 seconds
+
+      // Function to initialize and run stepper in a specific pane
+      function startStepper(paneId) {
+        clearInterval(currentStepperInterval);
+        
+        const pane = document.getElementById(`tab-${paneId}`);
+        if(!pane) return;
+
+        const stepperBtns = pane.querySelectorAll('.stepper-btn');
+        const stepperCards = pane.querySelectorAll('.stepper-card');
+        if(stepperBtns.length === 0) return;
+
+        // Reset all in this pane
+        stepperBtns.forEach(b => {
+          // Clone and replace to completely clear old animations
+          const newBtn = b.cloneNode(true);
+          b.parentNode.replaceChild(newBtn, b);
+        });
+        
+        // Re-select after clonning
+        const freshBtns = pane.querySelectorAll('.stepper-btn');
+
+        freshBtns.forEach(b => b.classList.remove('active'));
+        stepperCards.forEach(c => c.classList.remove('active'));
+
+        // Start from index 0
+        let currentIndex = 0;
+        freshBtns[currentIndex].classList.add('active');
+        stepperCards[currentIndex].classList.add('active');
+
+        // Function to tick to the next
+        const tick = () => {
+          freshBtns[currentIndex].classList.remove('active');
+          stepperCards[currentIndex].classList.remove('active');
+          
+          currentIndex = (currentIndex + 1) % freshBtns.length;
+          
+          // Re-trigger CSS animation reflow
+          void freshBtns[currentIndex].offsetWidth;
+          
+          freshBtns[currentIndex].classList.add('active');
+          stepperCards[currentIndex].classList.add('active');
+        };
+
+        // Autoplay interval
+        currentStepperInterval = setInterval(tick, STEPPER_DURATION);
+
+        // Click handlers for manual override
+        freshBtns.forEach((btn, ind) => {
+          btn.addEventListener('click', () => {
+            clearInterval(currentStepperInterval); // stop current timer
+            
+            freshBtns[currentIndex].classList.remove('active');
+            stepperCards[currentIndex].classList.remove('active');
+            
+            currentIndex = ind;
+            void freshBtns[currentIndex].offsetWidth;
+            
+            freshBtns[currentIndex].classList.add('active');
+            stepperCards[currentIndex].classList.add('active');
+            
+            // restart timer
+            currentStepperInterval = setInterval(tick, STEPPER_DURATION);
+          });
+        });
+      }
+
+      // Initial Start for first active tab
+      const initialTab = document.querySelector('.tab-btn-top.active');
+      if(initialTab) {
+        startStepper(initialTab.dataset.tab);
+      }
+
+      // Category Tab Switch Logic
+      tabBtnsTop.forEach(btn => {
+        btn.addEventListener('click', () => {
+          tabBtnsTop.forEach(b => b.classList.remove('active'));
+          tabPanes.forEach(p => p.classList.remove('active'));
+          
+          btn.classList.add('active');
+          const targetId = btn.dataset.tab;
+          const target = document.getElementById(`tab-${targetId}`);
+          if(target) target.classList.add('active');
+
+          // Spin up the stepper for the newly selected category
+          startStepper(targetId);
+        });
+      });
+    });
+    
+    // DEBUG: Measure DOM layouts
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const carousel = document.querySelector('.stepper-carousel');
+        const menu = document.querySelector('.stepper-menu');
+        const content = document.querySelector('.stepper-content');
+        console.log("DEBUG-LAYOUT - stepper-carousel:", carousel ? JSON.stringify(carousel.getBoundingClientRect()) : "null");
+        console.log("DEBUG-LAYOUT - stepper-menu:", menu ? JSON.stringify(menu.getBoundingClientRect()) : "null");
+        console.log("DEBUG-LAYOUT - stepper-content:", content ? JSON.stringify(content.getBoundingClientRect()) : "null");
+        
+        const pane = document.querySelector('.tab-pane.active');
+        console.log("DEBUG-LAYOUT - active tab-pane:", pane ? JSON.stringify(pane.getBoundingClientRect()) : "null");
+      }, 1000);
+    });
+  </script>
+</body>
+
+</html>
