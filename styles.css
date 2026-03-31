@@ -1793,6 +1793,13 @@ input, textarea { font-family: inherit; }
   filter: saturate(0.85) contrast(1.05);
 }
 
+.visit__map-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  cursor: pointer;
+}
+
 /* ── FINAL CTA ──────────────────────────────────────────────── */
 .cta-band {
   background: var(--c-surface-highest);
