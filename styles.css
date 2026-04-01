@@ -2528,133 +2528,235 @@ input, textarea { font-family: inherit; }
 
 .tabs-content { width: 100%; }
 
-/* Inner Stepper Carousel Layout */
+/* ══ INNER STEPPER CAROUSEL — Premium Unified Card (Desktop) ══ */
 .stepper-carousel {
   display: grid;
-  grid-template-columns: 320px 1fr;
-  gap: var(--sp-20);
-  align-items: center;
+  /* Image: 55% | List: 45% */
+  grid-template-columns: 55% 45%;
   width: 100%;
-  max-width: 1000px;
+  max-width: 1080px;
   margin-inline: auto;
+  background: var(--c-white);
+  border-radius: 28px;
+  box-shadow:
+    0 32px 80px rgba(75, 25, 75, 0.12),
+    0 0 0 1px rgba(75, 25, 75, 0.06);
+  overflow: hidden;
+  min-height: 520px;
 }
 
-/* Stepper Menu Left */
+/* LEFT: IMAGE PANEL ─────────────────────────────── */
+.stepper-content {
+  position: relative;
+  overflow: hidden;
+  background: var(--c-surface-highest);
+}
+
+/* All cards stacked on top of each other */
+.stepper-card {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.stepper-card.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Full-bleed image */
+.stepper-card__img {
+  position: absolute;
+  inset: 0;
+}
+.stepper-card__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.stepper-card.active .stepper-card__img img {
+  animation: kbZoom 6s ease-out forwards;
+}
+@keyframes kbZoom {
+  from { transform: scale(1.08); }
+  to   { transform: scale(1.0); }
+}
+
+/* Gradient overlay bottom-left for text legibility */
+.stepper-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, rgba(55,10,55,0.55) 0%, transparent 60%),
+    linear-gradient(to top, rgba(30,5,30,0.7) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Text overlay on image */
+.stepper-card__info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2.5rem 2rem 2rem;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.stepper-card__info h4 {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+  line-height: 1.15;
+  text-shadow: 0 2px 16px rgba(0,0,0,0.3);
+}
+.stepper-card__info p {
+  font-size: 0.9375rem;
+  color: rgba(255,255,255,0.82);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Category pill badge on image */
+.stepper-card__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.18);
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  width: fit-content;
+  z-index: 2;
+  position: relative;
+  margin: 1.5rem 2rem 0;
+}
+
+/* RIGHT: PROCEDURE LIST ─────────────────────────── */
 .stepper-menu {
   display: flex;
   flex-direction: column;
-  gap: var(--sp-2);
-}
-.stepper-btn {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  background: none;
-  border: none;
-  padding: var(--sp-4);
-  cursor: pointer;
-  text-align: left;
-  border-radius: var(--r-md);
-  transition: background var(--t-fast);
-}
-.stepper-btn:hover {
-  background: rgba(75, 25, 75, 0.03);
+  padding: 0;
+  background: var(--c-white);
+  overflow: hidden;
 }
 
-/* Premium vertical progress bar per item */
-.stepper-progress {
+/* Each procedure row */
+.stepper-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  background: none;
+  border: none;
+  border-bottom: 1px solid rgba(75, 25, 75, 0.06);
+  padding: 1.1rem 1.75rem;
+  cursor: pointer;
+  text-align: left;
+  position: relative;
+  transition: background 0.25s ease;
+  flex: 1;
+  justify-content: center;
+}
+.stepper-btn:last-child {
+  border-bottom: none;
+}
+.stepper-btn::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
   width: 3px;
-  height: 24px;
-  background-color: rgba(75, 25, 75, 0.1);
-  border-radius: 4px;
+  background: transparent;
+  border-radius: 0 3px 3px 0;
+  transition: background 0.3s ease;
+}
+.stepper-btn:hover {
+  background: rgba(75, 25, 75, 0.025);
+}
+.stepper-btn.active {
+  background: rgba(75, 25, 75, 0.04);
+}
+.stepper-btn.active::before {
+  background: linear-gradient(180deg, var(--c-primary), var(--c-secondary));
+}
+
+/* Procedure number */
+.stepper-num {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--c-on-surface-faint);
+  text-transform: uppercase;
+  margin-bottom: 0.2rem;
+  transition: color 0.25s;
+}
+.stepper-btn.active .stepper-num {
+  color: var(--c-secondary);
+}
+
+/* Procedure title */
+.stepper-title {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--c-on-surface-muted);
+  line-height: 1.2;
+  margin: 0 0 0.55rem 0;
+  transition: color 0.25s ease, font-weight 0.25s ease;
+}
+.stepper-btn.active .stepper-title {
+  color: var(--c-primary);
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+/* Progress bar — horizontal, directly below title */
+.stepper-progress {
+  width: 100%;
+  height: 2px;
+  background: rgba(75, 25, 75, 0.08);
+  border-radius: 2px;
   overflow: hidden;
-  margin-right: var(--sp-4);
   position: relative;
   flex-shrink: 0;
 }
 .stepper-bar {
   position: absolute;
-  top: 0; left: 0; width: 100%; height: 0%;
-  background-color: var(--c-primary);
-}
-
-.stepper-title {
-  font-family: var(--font-serif);
-  font-size: 1.25rem;
-  font-weight: 500;
-  color: var(--c-on-surface-muted);
-  margin: 0;
-  transition: color var(--t-fast);
-}
-
-.stepper-btn.active .stepper-title {
-  color: var(--c-primary);
-  font-weight: 700;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, var(--c-primary), var(--c-secondary));
+  border-radius: 2px;
 }
 .stepper-btn.active .stepper-bar {
-  animation: fillProgressHeight 5s linear forwards;
-}
-
-@keyframes fillProgressHeight {
-  0% { height: 0%; }
-  100% { height: 100%; }
+  animation: fillProgressWidth 5s linear forwards;
 }
 
 @keyframes fillProgressWidth {
-  0% { width: 0%; }
+  0%   { width: 0%; }
   100% { width: 100%; }
 }
-
-/* Stepper Display Card Right (Premium Look) */
-.stepper-content {
-  position: relative;
-  height: 480px;
-  background: var(--c-white);
-  border-radius: var(--r-xl);
-  box-shadow: 0 24px 64px rgba(0,0,0,0.06);
-  overflow: hidden;
-}
-.stepper-card {
-  position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
-  display: flex; flex-direction: column;
-  opacity: 0; pointer-events: none; transition: opacity 0.6s ease;
-}
-.stepper-card.active {
-  opacity: 1; pointer-events: auto;
-  animation: slideFadeInUp 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-}
-@keyframes slideFadeInUp {
-  0% { opacity: 0; transform: translateY(30px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-.stepper-card__img {
-  width: 100%; height: 65%;
-  overflow: hidden;
-}
-.stepper-card__img img {
-  width: 100%; height: 100%; object-fit: cover;
-  transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-/* Subtle hover scale effect on image */
-.stepper-content:hover .stepper-card.active .stepper-card__img img {
-  transform: scale(1.05);
-}
-
-.stepper-card__info {
-  height: 35%;
-  padding: var(--sp-8);
-  display: flex; flex-direction: column; justify-content: center;
-  background: var(--c-white);
-}
-.stepper-card__info h4 {
-  font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700;
-  color: var(--c-primary); margin: 0 0 var(--sp-2) 0;
-}
-.stepper-card__info p {
-  font-size: 1rem; color: var(--c-on-surface-muted); margin: 0;
-  line-height: 1.6;
+@keyframes fillProgressHeight {
+  0%   { height: 0%; }
+  100% { height: 100%; }
 }
 
 /* ── SOFT CTA (TREATMENTS) ─────────────────────────────────── */
@@ -2869,51 +2971,38 @@ input, textarea { font-family: inherit; }
   }
   .tab-btn-top { white-space: nowrap; font-size: 0.95rem; padding: 0.65rem 1.25rem; }
   
+  /* ─── MOBILE: stepper vira carousel fullscreen ─── */
   .stepper-carousel {
-    display: flex;
-    flex-direction: column;
-    gap: var(--sp-6);
-  }
-  
-  /* Reset direction for the animated bar on mobile */
-  .stepper-menu {
-    display: flex; flex-direction: row; gap: var(--sp-4);
-    overflow-x: auto; scrollbar-width: none;
-    padding-bottom: 4px;
-    border-bottom: 1px solid rgba(75, 25, 75, 0.1);
-  }
-  .stepper-menu::-webkit-scrollbar { display: none; }
-  .stepper-btn {
-    flex: 0 0 auto;
-    flex-direction: column; /* Vertical stack: text over bar */
-    border-bottom: none; padding: var(--sp-3) 0;
-    width: 140px; margin-right: 0; text-align: center;
+    display: block;
+    background: transparent;
     border-radius: 0;
-    position: relative;
+    box-shadow: none;
+    overflow: visible;
+    grid-template-columns: none;
+    min-height: unset;
   }
-  .stepper-progress {
-    width: 100%;
-    height: 3px;
-    position: absolute;
-    bottom: -1px; left: 0; margin-right: 0;
-    border-radius: 0;
-  }
-  .stepper-bar {
-    width: 0%; height: 100%; top: 0; left: 0;
-  }
-  .stepper-btn.active .stepper-bar {
-    animation: fillProgressWidth 5s linear forwards;
-  }
-  .stepper-title { font-size: 0.95rem; font-family: var(--font-sans); margin: 0 auto 6px auto; }
-  
+
+  /* Hide the right-side menu on mobile (replaced by mob-tc) */
+  .stepper-menu { display: none; }
+
+  /* Image panel: restore to stacked flow on mobile */
   .stepper-content {
-    height: 480px; 
-    box-shadow: 0 8px 32px rgba(0,0,0,0.08); /* slight punchier shadow on mobile */
+    position: relative;
+    height: 480px;
+    border-radius: var(--r-2xl);
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
   }
-  .stepper-card__img { height: 60%; }
-  .stepper-card__info { height: 40%; padding: var(--sp-6); }
-  .stepper-card__info h4 { font-size: 1.25rem; }
-  .stepper-card__info p { font-size: 0.9rem; }
+
+  /* Badge hidden on mobile */
+  .stepper-card__badge { display: none; }
+
+  /* Info text on mobile */
+  .stepper-card__info {
+    padding: 1.5rem 1.25rem 1.25rem;
+  }
+  .stepper-card__info h4 { font-size: 1.35rem; }
+  .stepper-card__info p  { font-size: 0.9rem; }
   .card--offset-md,
   .card--offset-sm { margin-top: 0; }
 
