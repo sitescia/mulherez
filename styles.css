@@ -2760,61 +2760,188 @@ input, textarea { font-family: inherit; }
 }
 
 /* ── SOFT CTA (TREATMENTS) ─────────────────────────────────── */
+/* ══ SOFT CTA (TREATMENTS) — Premium Desktop Redesign ══ */
 .soft-cta-section {
   padding-bottom: var(--sp-24);
   padding-top: 0;
   background: var(--c-surface-low);
 }
+
 .soft-cta-box {
-  background: var(--c-white);
-  border-radius: var(--r-2xl);
-  padding: var(--sp-12) var(--sp-8);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: var(--sp-6);
-  box-shadow: 0 12px 48px rgba(75, 25, 75, 0.04);
-  border: 1px solid rgba(75, 25, 75, 0.05);
-  max-width: 800px;
-  margin-inline: auto;
   position: relative;
   overflow: hidden;
+  max-width: 1080px;
+  margin-inline: auto;
+  border-radius: 28px;
+  padding: 4rem 5rem;
+
+  /* Rich dark background matching the brand */
+  background:
+    linear-gradient(135deg,
+      hsl(300, 50%, 14%) 0%,
+      hsl(290, 40%, 10%) 50%,
+      hsl(280, 55%, 12%) 100%);
+
+  /* Premium glow shadow */
+  box-shadow:
+    0 40px 100px rgba(75, 25, 75, 0.35),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
+
+  /* Horizontal split */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+
+  text-align: left;
 }
+
+/* Subtle radial orb top-left */
 .soft-cta-box::before {
-  content: "";
+  content: '';
   position: absolute;
-  top: 0; left: 0; right: 0; height: 4px;
-  background: var(--gradient-brand);
+  top: -60px;
+  left: -60px;
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(180, 80, 180, 0.18) 0%, transparent 65%);
+  pointer-events: none;
 }
+
+/* Subtle radial orb bottom-right */
 .soft-cta-box::after {
-  content: "";
+  content: '';
   position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  width: 400px; height: 400px;
-  background: radial-gradient(circle, rgba(75,25,75,0.03) 0%, transparent 70%);
-  z-index: 0; pointer-events: none;
+  bottom: -80px;
+  right: -40px;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(120, 40, 160, 0.14) 0%, transparent 65%);
+  pointer-events: none;
 }
+
+/* Left: copy block */
+.soft-cta__left {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Thin accent line above eyebrow */
+.soft-cta__rule {
+  display: block;
+  width: 36px;
+  height: 1px;
+  background: linear-gradient(to right, var(--c-secondary), rgba(180, 130, 200, 0.3));
+  margin-bottom: 0.25rem;
+}
+
+/* Eyebrow label */
+.soft-cta__eyebrow {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--c-secondary-dim);
+}
+
+/* Main headline */
 .soft-cta-title {
   font-family: var(--font-serif);
-  font-size: 2rem; color: var(--c-primary);
-  line-height: 1.2; position: relative; z-index: 1;
+  font-size: clamp(1.6rem, 2.5vw, 2.1rem);
+  font-weight: 400;
+  line-height: 1.25;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0;
+  letter-spacing: -0.01em;
 }
+
+.soft-cta-title strong {
+  font-weight: 700;
+}
+
+/* Supporting copy */
+.soft-cta__sub {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.45);
+  line-height: 1.6;
+  max-width: 36ch;
+  margin: 0;
+}
+
+/* Right: CTA block */
+.soft-cta__right {
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+/* Decorative corner element */
+.soft-cta__deco {
+  position: absolute;
+  bottom: 2.5rem;
+  right: 5rem;
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.12);
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* CTA Button — elegant outline with glow */
 .soft-cta-btn {
-  position: relative; z-index: 1;
-  padding: 1rem 2.5rem; font-size: 1.1rem;
-  display: inline-flex; align-items: center; gap: 8px;
-  border-radius: 999px; background: var(--c-primary);
-  color: var(--c-white); text-decoration: none; font-weight: 500;
-  transition: all var(--t-base);
-  box-shadow: 0 8px 24px rgba(75, 25, 75, 0.15);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0.875rem 2.25rem;
+  border-radius: 999px;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  color: var(--c-white);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.12);
+  white-space: nowrap;
+}
+.soft-cta-btn svg {
+  opacity: 0.8;
+  transition: transform 0.3s ease;
 }
 .soft-cta-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 32px rgba(75, 25, 75, 0.25);
-  background: var(--c-primary-light);
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 36px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.2);
+}
+.soft-cta-btn:hover svg {
+  transform: scale(1.1);
+}
+
+/* Privacy note */
+.soft-cta__note {
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.25);
+  letter-spacing: 0.08em;
+  text-align: right;
 }
 
 /* ── RESPONSIVE ─────────────────────────────────────────────── */
@@ -2951,7 +3078,72 @@ input, textarea { font-family: inherit; }
   .stat__row { margin-bottom: 4px; }
   .stat__num { font-size: 2.25rem; }
   .stat__unit { font-size: 1.5rem; }
-  .stat__label { font-size: 0.5rem; line-height: 1.2; }
+    /* ─── Mobile: reset dark CTA back to light compact bar ─── */
+  .soft-cta-box {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    gap: var(--sp-5);
+    padding: var(--sp-5) var(--sp-6);
+    border-radius: var(--r-xl);
+    max-width: 100%;
+    /* Restore light background on mobile */
+    background: var(--c-white);
+    box-shadow: 0 4px 24px rgba(75,25,75,0.06);
+    border: 1px solid rgba(75,25,75,0.06);
+  }
+  .soft-cta-box::before,
+  .soft-cta-box::after { display: none; }
+
+  /* Hide desktop-only elements */
+  .soft-cta__eyebrow,
+  .soft-cta__rule,
+  .soft-cta__sub,
+  .soft-cta__note,
+  .soft-cta__deco { display: none; }
+
+  /* Restore left/right to simple flex children */
+  .soft-cta__left {
+    flex: 1;
+    gap: 0;
+  }
+  .soft-cta__right {
+    flex-shrink: 0;
+    align-items: center;
+    gap: 0;
+  }
+
+  .soft-cta-title {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--c-on-surface);
+    line-height: 1.4;
+    font-family: var(--font-sans);
+  }
+  .soft-cta-title strong { font-weight: 600; }
+
+  .soft-cta-btn {
+    flex-shrink: 0;
+    width: auto;
+    padding: 0.55rem 1.1rem;
+    font-size: 0.8125rem;
+    gap: 6px;
+    box-shadow: none;
+    border: 1.5px solid rgba(75,25,75,0.18);
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    color: var(--c-primary);
+    font-weight: 600;
+  }
+  .soft-cta-btn:hover {
+    background: var(--c-primary);
+    color: var(--c-white);
+    border-color: var(--c-primary);
+    transform: none;
+    box-shadow: none;
+  }
 
   .cards-grid {
     grid-template-columns: 1fr;
