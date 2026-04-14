@@ -595,6 +595,125 @@ const CFG = {
 })();
 
 /* ═══════════════════════════════════════════════
+   VIDEO MODAL — YouTube carousel (Ninfoplastia)
+═══════════════════════════════════════════════ */
+const initVideoModal = () => {
+  // Preencha com os IDs dos vídeos do YouTube (ex.: 'dQw4w9WgXcQ')
+  const videos = [
+    // { id: 'YOUTUBE_ID_1', title: 'Dra. Mirelle explica a ninfoplastia' },
+    // { id: 'YOUTUBE_ID_2', title: 'Recuperação e cuidados' },
+  ];
+
+  const modal     = document.getElementById('videoModal');
+  if (!modal) return;
+
+  const frame     = document.getElementById('videoModalFrame');
+  const caption   = document.getElementById('videoModalCaption');
+  const dotsWrap  = document.getElementById('videoModalDots');
+  const prevBtn   = modal.querySelector('[data-video-modal-prev]');
+  const nextBtn   = modal.querySelector('[data-video-modal-next]');
+  const openers   = document.querySelectorAll('[data-video-modal-open]');
+  const closers   = modal.querySelectorAll('[data-video-modal-close]');
+
+  let current     = 0;
+  let lastFocus   = null;
+
+  const renderFrame = () => {
+    frame.innerHTML = '';
+    frame.classList.remove('video-modal__frame-inner--empty');
+
+    if (!videos.length) {
+      frame.classList.add('video-modal__frame-inner--empty');
+      frame.textContent = 'Os vídeos serão adicionados em breve.';
+      caption.textContent = '';
+      return;
+    }
+
+    const video  = videos[current];
+    const iframe = document.createElement('iframe');
+    iframe.src = `https://www.youtube-nocookie.com/embed/${video.id}?rel=0&modestbranding=1&playsinline=1`;
+    iframe.title = video.title || 'Vídeo Mulherez';
+    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+    iframe.allowFullscreen = true;
+    frame.appendChild(iframe);
+
+    caption.textContent = video.title ? `${current + 1} / ${videos.length} — ${video.title}` : `${current + 1} / ${videos.length}`;
+  };
+
+  const renderDots = () => {
+    dotsWrap.innerHTML = '';
+    if (videos.length <= 1) return;
+
+    videos.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.className = 'video-modal__dot' + (i === current ? ' is-active' : '');
+      dot.setAttribute('role', 'tab');
+      dot.setAttribute('aria-label', `Ir para o vídeo ${i + 1}`);
+      dot.setAttribute('aria-selected', i === current ? 'true' : 'false');
+      dot.addEventListener('click', () => goTo(i));
+      dotsWrap.appendChild(dot);
+    });
+  };
+
+  const updateNav = () => {
+    const disabled = videos.length <= 1;
+    prevBtn.disabled = disabled;
+    nextBtn.disabled = disabled;
+  };
+
+  const goTo = (index) => {
+    if (!videos.length) return;
+    current = (index + videos.length) % videos.length;
+    renderFrame();
+    renderDots();
+  };
+
+  const open = () => {
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('video-modal-open');
+    lastFocus = document.activeElement;
+    renderFrame();
+    renderDots();
+    updateNav();
+    (videos.length > 1 ? nextBtn : modal.querySelector('.video-modal__close')).focus();
+  };
+
+  const close = () => {
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('video-modal-open');
+    frame.innerHTML = ''; // stops YouTube playback
+    if (lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
+  };
+
+  openers.forEach((el) => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      open();
+    });
+  });
+
+  closers.forEach((el) => el.addEventListener('click', close));
+  prevBtn.addEventListener('click', () => goTo(current - 1));
+  nextBtn.addEventListener('click', () => goTo(current + 1));
+
+  document.addEventListener('keydown', (e) => {
+    if (!modal.classList.contains('is-open')) return;
+    if (e.key === 'Escape')     close();
+    if (e.key === 'ArrowLeft')  goTo(current - 1);
+    if (e.key === 'ArrowRight') goTo(current + 1);
+  });
+};
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initVideoModal);
+} else {
+  initVideoModal();
+}
+
+/* ═══════════════════════════════════════════════
    CONSOLE SIGNATURE
 ═══════════════════════════════════════════════ */
 console.log(
