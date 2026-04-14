@@ -388,10 +388,11 @@ input, textarea { font-family: inherit; }
   left: 0;
   height: 2px;
   width: 0%;
-  background: var(--gradient-brand);
+  background: linear-gradient(90deg, var(--c-secondary) 0%, var(--c-secondary-dim) 100%);
   z-index: 9998;
   transition: width 0.1s linear;
   will-change: width;
+  box-shadow: 0 0 12px rgba(68, 219, 210, 0.5);
 }
 
 /* ── CUSTOM CURSOR ──────────────────────────────────────────── */
@@ -1207,6 +1208,28 @@ input, textarea { font-family: inherit; }
 
 .card__body {
   padding-inline: var(--sp-2);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--r-lg);
+  padding: var(--sp-5);
+  transition: all var(--t-base);
+}
+
+.card--treatment:hover .card__body {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px rgba(75, 25, 75, 0.15);
+}
+
+/* Ativar efeito da setinha ao hovear o card */
+.card--treatment:hover .subtle-card-cta {
+  opacity: 1;
+}
+
+.card--treatment:hover .subtle-card-cta .material-symbols-outlined {
+  transform: translateX(4px);
 }
 
 .tag {

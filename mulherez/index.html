@@ -71,14 +71,22 @@
       background: var(--c-white) !important;
     }
 
-    .nav__links .nav__link:hover,
-    .nav__links .nav__link--active {
-      color: var(--c-secondary) !important;
+    .nav__links .nav__link:hover {
+      color: var(--c-secondary-dim) !important;
     }
 
-    .nav__links .nav__link:hover::after,
+    .nav__links .nav__link--active {
+      color: var(--c-secondary-dim) !important;
+    }
+
+    .nav__links .nav__link:hover::after {
+      background: var(--c-secondary-dim) !important;
+      box-shadow: 0 0 8px rgba(68, 219, 210, 0.5);
+    }
+
     .nav__links .nav__link--active::after {
-      background: var(--c-secondary) !important;
+      background: var(--c-secondary-dim) !important;
+      box-shadow: 0 0 8px rgba(68, 219, 210, 0.5);
     }
 
     .nav__burger span {
@@ -161,6 +169,7 @@
         <a href="#results" class="nav__link nav__link--active">Ninfoplastia</a>
         <a href="#blefaroplastia" class="nav__link">Blefaroplastia</a>
         <a href="#laser-intimo" class="nav__link">Laser Íntimo</a>
+        <a href="#reviews" class="nav__link">Avaliações</a>
         <a href="#visit" class="nav__link">Localização</a>
       </div>
 
@@ -1763,7 +1772,7 @@
   <!-- ══════════════════════════════════════════
        VISIT THE ATELIER
   ══════════════════════════════════════════ -->
-  <section class="section visit" id="journal">
+  <section class="section visit" id="visit">
     <div class="container">
       <div class="visit__layout">
 
