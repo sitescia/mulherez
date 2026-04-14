@@ -751,6 +751,33 @@ if (document.readyState === 'loading') {
 }
 
 /* ═══════════════════════════════════════════════
+   TREATMENT CARDS — Make entire card clickable
+═══════════════════════════════════════════════ */
+const initTreatmentCards = () => {
+  const treatmentCards = document.querySelectorAll('.card--treatment');
+
+  treatmentCards.forEach((card) => {
+    const link = card.querySelector('a.card__media');
+    if (link && link.href) {
+      card.style.cursor = 'pointer';
+      card.addEventListener('click', (e) => {
+        // Don't redirect if clicking on the actual link (avoid double-navigation)
+        if (e.target !== link && !link.contains(e.target)) {
+          e.preventDefault();
+          window.location.href = link.getAttribute('href');
+        }
+      });
+    }
+  });
+};
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initTreatmentCards);
+} else {
+  initTreatmentCards();
+}
+
+/* ═══════════════════════════════════════════════
    CONSOLE SIGNATURE
 ═══════════════════════════════════════════════ */
 console.log(

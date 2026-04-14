@@ -71,6 +71,16 @@
       background: var(--c-white) !important;
     }
 
+    .nav__links .nav__link:hover,
+    .nav__links .nav__link--active {
+      color: var(--c-secondary) !important;
+    }
+
+    .nav__links .nav__link:hover::after,
+    .nav__links .nav__link--active::after {
+      background: var(--c-secondary) !important;
+    }
+
     .nav__burger span {
       background: var(--c-white) !important;
     }
@@ -151,7 +161,7 @@
         <a href="#results" class="nav__link nav__link--active">Ninfoplastia</a>
         <a href="#blefaroplastia" class="nav__link">Blefaroplastia</a>
         <a href="#laser-intimo" class="nav__link">Laser Íntimo</a>
-        <a href="#team" class="nav__link">Equipe Médica</a>
+        <a href="#visit" class="nav__link">Localização</a>
       </div>
 
       <a href="https://api.whatsapp.com/send/?phone=5511995224461" target="_blank" rel="noopener noreferrer"
@@ -928,12 +938,12 @@
       <div class="cards-grid">
 
         <div class="card card--treatment" data-reveal="up" data-delay="0">
-          <div class="card__media">
+          <a href="#results" class="card__media">
             <img
               src="img/ninfo-a-laser.webp"
               alt="Facial contouring" class="card__img" loading="lazy" />
             <div class="card__veil"></div>
-          </div>
+          </a>
           <div class="card__body">
             <span class="tag">Íntima</span>
             <h4 class="card__title">Ninfoplastia a Laser</h4>
@@ -948,12 +958,12 @@
         </div>
 
         <div class="card card--treatment card--offset-md" data-reveal="up" data-delay="150">
-          <div class="card__media">
+          <a href="#blefaroplastia" class="card__media">
             <img
               src="img/blefaroplastia-antes-depois.webp"
               alt="Luminous skin resurfacing" class="card__img" loading="lazy" />
             <div class="card__veil"></div>
-          </div>
+          </a>
           <div class="card__body">
             <span class="tag">Facial</span>
             <h4 class="card__title">Blefaroplastia a Laser</h4>
@@ -967,12 +977,12 @@
         </div>
 
         <div class="card card--treatment card--offset-sm" data-reveal="up" data-delay="300">
-          <div class="card__media">
+          <a href="#laser-intimo" class="card__media">
             <img
               src="img/laser-intimo01.webp"
               alt="Cellular ritual" class="card__img" loading="lazy" />
             <div class="card__veil"></div>
-          </div>
+          </a>
           <div class="card__body">
             <span class="tag">Íntima</span>
             <h4 class="card__title">Laser Íntimo</h4>
