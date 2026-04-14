@@ -143,6 +143,49 @@ input, textarea { font-family: inherit; }
   margin-bottom: var(--sp-4);
 }
 .eyebrow--light { color: rgba(255,255,255,0.6); }
+.eyebrow-pill {
+  display: inline-block;
+  padding: 0.375rem 0.875rem;
+  border-radius: 9999px;
+  background: rgba(0, 106, 101, 0.12);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: var(--c-secondary);
+  border: 1px solid rgba(0, 106, 101, 0.25);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-family: var(--font-sans);
+  transition: all 0.3s ease;
+}
+.eyebrow-pill:hover {
+  background: rgba(0, 106, 101, 0.18);
+  border-color: rgba(0, 106, 101, 0.35);
+  transform: translateY(-1px);
+}
+
+.eyebrow-pill-purple {
+  display: inline-block;
+  padding: 0.375rem 0.875rem;
+  border-radius: 9999px;
+  background: rgba(75, 25, 75, 0.12);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: var(--c-primary);
+  border: 1px solid rgba(75, 25, 75, 0.25);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-family: var(--font-sans);
+  transition: all 0.3s ease;
+}
+.eyebrow-pill-purple:hover {
+  background: rgba(75, 25, 75, 0.18);
+  border-color: rgba(75, 25, 75, 0.35);
+  transform: translateY(-1px);
+}
 
 .section-title {
   font-family: var(--font-serif);
@@ -930,7 +973,7 @@ input, textarea { font-family: inherit; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center center;
+  object-position: center 35%;
   display: block;
   opacity: 0.62;
   -webkit-mask-image: linear-gradient(
@@ -3025,7 +3068,7 @@ input, textarea { font-family: inherit; }
   }
   .hero__portrait-img {
     opacity: 0.8;
-    object-position: 70% center;
+    object-position: 70% 35%;
     -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.15) 20%, black 75%);
     mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.15) 20%, black 75%);
   }
@@ -3365,6 +3408,28 @@ input, textarea { font-family: inherit; }
 .fab-whatsapp:hover {
   transform: scale(1.08);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
+}
+
+/* ═══════════════════════════════════════════════
+   UTILITY: Desktop-only elements & styling
+═══════════════════════════════════════════════ */
+.desktop-only {
+  display: none;
+}
+
+.desktop-italic {
+  font-style: normal;
+}
+
+@media (min-width: 768px) {
+  .desktop-only {
+    display: inline;
+  }
+
+  .desktop-italic {
+    font-style: italic;
+    font-weight: 400;
+  }
 }
 
 /* ═══════════════════════════════════════════════

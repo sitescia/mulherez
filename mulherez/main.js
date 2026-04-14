@@ -598,11 +598,35 @@ const CFG = {
    VIDEO MODAL — YouTube carousel (Ninfoplastia)
 ═══════════════════════════════════════════════ */
 const initVideoModal = () => {
-  // Preencha com os IDs dos vídeos do YouTube (ex.: 'dQw4w9WgXcQ')
-  const videos = [
-    // { id: 'YOUTUBE_ID_1', title: 'Dra. Mirelle explica a ninfoplastia' },
-    // { id: 'YOUTUBE_ID_2', title: 'Recuperação e cuidados' },
-  ];
+  // Preencha o campo `id` com o ID do vídeo do YouTube (ex.: 'dQw4w9WgXcQ')
+  const videoGroups = {
+    ninfo: {
+      label: 'Ninfoplastia a Laser',
+      items: [
+        { id: '', title: 'Vídeo 1' },
+        { id: '', title: 'Vídeo 2' },
+        { id: '', title: 'Vídeo 3' },
+      ],
+    },
+    blefa: {
+      label: 'Blefaroplastia a Laser',
+      items: [
+        { id: '', title: 'Vídeo 1' },
+        { id: '', title: 'Vídeo 2' },
+        { id: '', title: 'Vídeo 3' },
+      ],
+    },
+    'laser-intimo': {
+      label: 'Laser Íntimo',
+      items: [
+        { id: '', title: 'Vídeo 1' },
+        { id: '', title: 'Vídeo 2' },
+        { id: '', title: 'Vídeo 3' },
+      ],
+    },
+  };
+
+  let videos = [];
 
   const modal     = document.getElementById('videoModal');
   if (!modal) return;
@@ -629,13 +653,19 @@ const initVideoModal = () => {
       return;
     }
 
-    const video  = videos[current];
-    const iframe = document.createElement('iframe');
-    iframe.src = `https://www.youtube-nocookie.com/embed/${video.id}?rel=0&modestbranding=1&playsinline=1`;
-    iframe.title = video.title || 'Vídeo Mulherez';
-    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
-    iframe.allowFullscreen = true;
-    frame.appendChild(iframe);
+    const video = videos[current];
+
+    if (!video.id) {
+      frame.classList.add('video-modal__frame-inner--empty');
+      frame.textContent = 'Este vídeo será adicionado em breve.';
+    } else {
+      const iframe = document.createElement('iframe');
+      iframe.src = `https://www.youtube-nocookie.com/embed/${video.id}?rel=0&modestbranding=1&playsinline=1`;
+      iframe.title = video.title || 'Vídeo Mulherez';
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      iframe.allowFullscreen = true;
+      frame.appendChild(iframe);
+    }
 
     caption.textContent = video.title ? `${current + 1} / ${videos.length} — ${video.title}` : `${current + 1} / ${videos.length}`;
   };
@@ -669,7 +699,14 @@ const initVideoModal = () => {
     renderDots();
   };
 
-  const open = () => {
+  const titleEl = document.getElementById('videoModalTitle');
+
+  const open = (groupKey) => {
+    const group = videoGroups[groupKey];
+    if (!group) return;
+    videos  = group.items;
+    current = 0;
+    if (titleEl) titleEl.textContent = group.label;
     modal.classList.add('is-open');
     modal.setAttribute('aria-hidden', 'false');
     document.body.classList.add('video-modal-open');
@@ -691,7 +728,7 @@ const initVideoModal = () => {
   openers.forEach((el) => {
     el.addEventListener('click', (e) => {
       e.preventDefault();
-      open();
+      open(el.getAttribute('data-video-modal-open'));
     });
   });
 
