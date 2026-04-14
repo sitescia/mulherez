@@ -234,7 +234,7 @@ const CFG = {
       const elapsed  = timestamp - startTime;
       const progress = Math.min(elapsed / duration, 1);
       const value    = ease(progress) * target;
-      el.textContent = decimals > 0 ? value.toFixed(decimals) : Math.floor(value);
+      el.textContent = decimals > 0 ? value.toFixed(decimals) : Math.round(value);
       if (progress < 1) {
         requestAnimationFrame(step);
       } else {
