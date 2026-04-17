@@ -1093,6 +1093,35 @@
         background: rgba(68, 219, 210, 0.2);
         border-color: rgba(68, 219, 210, 0.5);
       }
+
+      #results .ninfo-crossfade {
+        position: relative;
+      }
+
+      #results .ninfo-crossfade__img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      #results .ninfo-crossfade.is-playing .ninfo-crossfade__img--top {
+        animation: ninfo-crossfade 10s ease-in-out infinite;
+      }
+
+      @keyframes ninfo-crossfade {
+        0%, 40% { opacity: 1; }
+        50%, 90% { opacity: 0; }
+        100% { opacity: 1; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        #results .ninfo-crossfade.is-playing .ninfo-crossfade__img--top {
+          animation: none;
+        }
+      }
     </style>
     <div class="container">
 
@@ -1107,10 +1136,15 @@
 
         <!-- Card: Image + Paragraph -->
         <div class="ba-media-wrap premium-glass-card" data-reveal="left">
-          <div class="img-wrap">
+          <div class="img-wrap ninfo-crossfade" id="ninfoCrossfade">
             <img
+              class="ninfo-crossfade__img ninfo-crossfade__img--base"
               src="assets/img/ninfo-a-laser1.webp"
-              alt="Ninfoplastia a Laser — antes e depois" loading="lazy" />
+              alt="Ninfoplastia a Laser — resultado" loading="lazy" />
+            <img
+              class="ninfo-crossfade__img ninfo-crossfade__img--top"
+              src="assets/img/Dra-Marina-Cirurgia.webp"
+              alt="Dra. Marina durante cirurgia de ninfoplastia a laser" loading="lazy" />
           </div>
           <div style="padding: 2.5rem 2rem;">
             <p style="font-size: 0.95rem; color: rgba(252,249,248,0.7); line-height: 1.7; margin: 0;">
@@ -1177,6 +1211,31 @@
 
       </div>
     </div>
+    <script>
+      (function () {
+        var el = document.getElementById('ninfoCrossfade');
+        if (!el) return;
+        var topImg = el.querySelector('.ninfo-crossfade__img--top');
+        var start = function () {
+          if (!topImg) return;
+          topImg.style.animation = 'none';
+          void topImg.offsetWidth;
+          topImg.style.animation = '';
+          el.classList.add('is-playing');
+        };
+        if ('IntersectionObserver' in window) {
+          var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) start();
+              else el.classList.remove('is-playing');
+            });
+          }, { threshold: 0.25 });
+          io.observe(el);
+        } else {
+          start();
+        }
+      })();
+    </script>
   </section>
 
   <!-- ══════════════════════════════════════════
@@ -1347,10 +1406,7 @@
           </div>
           <div style="padding: 2.5rem 2rem;">
             <p style="font-size: 0.95rem; color: var(--c-on-surface-muted); line-height: 1.7; margin: 0;">
-              A blefaroplastia a laser é uma cirurgia indicada para remover o excesso de pele das pálpebras superiores
-              e/ou inferiores, que pode causar aparência de cansaço ou envelhecimento. Com o uso do laser, o
-              procedimento é realizado com mais precisão e controle, proporcionando um resultado mais leve, natural e
-              harmônico, sem alterar as características do seu rosto.
+              Blefaroplastia à laser também é conhecida como harmonização das pálpebras, retirando o excesso de pele na pálpebra superior ou inferior. Feito a laser com recuperação mais rápida e procedimento com alta imediata!
             </p>
           </div>
         </div>
@@ -1417,44 +1473,38 @@
           <span class="eyebrow" style="margin-bottom: var(--sp-4); display: inline-block;">Resultados</span>
           <h3 class="ba-title" style="font-size: 2.25rem; color: var(--c-primary);">Antes e Depois</h3>
           <p style="color: var(--c-on-surface-muted); max-width: 40rem; margin: 0 auto;">Pacientes reais que renovaram o
-            olhar e resgataram a autoconfiança de forma natural.</p>
+            olhar e resgataram a sua autoconfiança.</p>
         </div>
 
         <div class="blefaro-carousel">
           <div class="blefaro-carousel__track">
             <!-- Group 1 -->
             <div class="blefaro-carousel__slide"><img
-                src="https://images.unsplash.com/photo-1544111751-28562725e1a3?auto=format&fit=crop&w=600&h=1066&q=80"
-                alt="Antes e Depois 1" loading="lazy"></div>
+                src="assets/img/C01.webp"
+                alt="Blefaroplastia a Laser — antes e depois, paciente 1" loading="lazy"></div>
             <div class="blefaro-carousel__slide"><img
-                src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&h=1066&q=80"
-                alt="Antes e Depois 2" loading="lazy"></div>
+                src="assets/img/C02.webp"
+                alt="Blefaroplastia a Laser — antes e depois, paciente 2" loading="lazy"></div>
             <div class="blefaro-carousel__slide"><img
-                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&h=1066&q=80"
-                alt="Antes e Depois 3" loading="lazy"></div>
+                src="assets/img/C03.webp"
+                alt="Blefaroplastia a Laser — antes e depois, paciente 3" loading="lazy"></div>
             <div class="blefaro-carousel__slide"><img
-                src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=600&h=1066&q=80"
-                alt="Antes e Depois 4" loading="lazy"></div>
-            <div class="blefaro-carousel__slide"><img
-                src="https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&w=600&h=1066&q=80"
-                alt="Antes e Depois 5" loading="lazy"></div>
+                src="assets/img/C04.webp"
+                alt="Blefaroplastia a Laser — antes e depois, paciente 4" loading="lazy"></div>
 
             <!-- Group 2 (Duplicate for continuous scroll) -->
-            <div class="blefaro-carousel__slide"><img
-                src="https://images.unsplash.com/photo-1544111751-28562725e1a3?auto=format&fit=crop&w=600&h=1066&q=80"
-                alt="Antes e Depois 1" loading="lazy"></div>
-            <div class="blefaro-carousel__slide"><img
-                src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&h=1066&q=80"
-                alt="Antes e Depois 2" loading="lazy"></div>
-            <div class="blefaro-carousel__slide"><img
-                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&h=1066&q=80"
-                alt="Antes e Depois 3" loading="lazy"></div>
-            <div class="blefaro-carousel__slide"><img
-                src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=600&h=1066&q=80"
-                alt="Antes e Depois 4" loading="lazy"></div>
-            <div class="blefaro-carousel__slide"><img
-                src="https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&w=600&h=1066&q=80"
-                alt="Antes e Depois 5" loading="lazy"></div>
+            <div class="blefaro-carousel__slide" aria-hidden="true"><img
+                src="assets/img/C01.webp"
+                alt="" loading="lazy"></div>
+            <div class="blefaro-carousel__slide" aria-hidden="true"><img
+                src="assets/img/C02.webp"
+                alt="" loading="lazy"></div>
+            <div class="blefaro-carousel__slide" aria-hidden="true"><img
+                src="assets/img/C03.webp"
+                alt="" loading="lazy"></div>
+            <div class="blefaro-carousel__slide" aria-hidden="true"><img
+                src="assets/img/C04.webp"
+                alt="" loading="lazy"></div>
           </div>
         </div>
       </div>
@@ -1589,7 +1639,7 @@
 
       <div class="section-center" data-reveal="up">
         <span class="eyebrow">Equipe Feminina</span>
-        <h2 class="section-title">Doutoras Especializadas</h2>
+        <h2 class="section-title">Médicas Especializadas</h2>
       </div>
 
       <div class="team-carousel" id="teamCarousel" data-reveal="up">
@@ -1633,7 +1683,7 @@
         <span class="eyebrow">Google Reviews</span>
         <h2 class="section-title">Pacientes que<br><em>Transformaram</em> suas Vidas</h2>
         <p class="section-note" style="max-width:36rem;margin-inline:auto;text-align:center">
-          Resultados reais de mulheres reais. Avaliações verificadas diretamente no Google.
+          Resultados reais de mulheres reais. Avaliações verificadas no Google Review.
         </p>
       </div>
 
@@ -1796,6 +1846,18 @@
        VISIT THE ATELIER
   ══════════════════════════════════════════ -->
   <section class="section visit" id="visit">
+    <style>
+      #visit .eyebrow-pill {
+        background: rgba(68, 219, 210, 0.12);
+        border-color: rgba(68, 219, 210, 0.35);
+        color: var(--c-secondary-dim);
+      }
+
+      #visit .eyebrow-pill:hover {
+        background: rgba(68, 219, 210, 0.2);
+        border-color: rgba(68, 219, 210, 0.5);
+      }
+    </style>
     <div class="container">
       <div class="visit__layout">
 
