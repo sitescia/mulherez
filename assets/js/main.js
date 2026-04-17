@@ -603,25 +603,7 @@ const initVideoModal = () => {
     ninfo: {
       label: 'Ninfoplastia a Laser',
       items: [
-        { id: '', title: 'Vídeo 1' },
-        { id: '', title: 'Vídeo 2' },
-        { id: '', title: 'Vídeo 3' },
-      ],
-    },
-    blefa: {
-      label: 'Blefaroplastia a Laser',
-      items: [
-        { id: '', title: 'Vídeo 1' },
-        { id: '', title: 'Vídeo 2' },
-        { id: '', title: 'Vídeo 3' },
-      ],
-    },
-    'laser-intimo': {
-      label: 'Laser Íntimo',
-      items: [
-        { id: '', title: 'Vídeo 1' },
-        { id: '', title: 'Vídeo 2' },
-        { id: '', title: 'Vídeo 3' },
+        { id: 'yB405m5isDs', title: 'Ninfoplastia a Laser' },
       ],
     },
   };
@@ -667,7 +649,11 @@ const initVideoModal = () => {
       frame.appendChild(iframe);
     }
 
-    caption.textContent = video.title ? `${current + 1} / ${videos.length} — ${video.title}` : `${current + 1} / ${videos.length}`;
+    if (videos.length <= 1) {
+      caption.textContent = video.title || '';
+    } else {
+      caption.textContent = video.title ? `${current + 1} / ${videos.length} — ${video.title}` : `${current + 1} / ${videos.length}`;
+    }
   };
 
   const renderDots = () => {
@@ -687,9 +673,11 @@ const initVideoModal = () => {
   };
 
   const updateNav = () => {
-    const disabled = videos.length <= 1;
-    prevBtn.disabled = disabled;
-    nextBtn.disabled = disabled;
+    const hide = videos.length <= 1;
+    prevBtn.disabled = hide;
+    nextBtn.disabled = hide;
+    prevBtn.style.display = hide ? 'none' : '';
+    nextBtn.style.display = hide ? 'none' : '';
   };
 
   const goTo = (index) => {

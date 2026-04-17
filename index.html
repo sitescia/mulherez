@@ -106,6 +106,37 @@
       transform: translateY(-2px);
     }
 
+    .nav__link {
+      white-space: nowrap;
+    }
+
+    .nav-cta {
+      flex-shrink: 0;
+      white-space: nowrap;
+    }
+
+    @media (min-width: 769px) and (max-width: 1200px) {
+      .nav__inner {
+        gap: var(--sp-6) !important;
+        padding-inline: var(--sp-6) !important;
+      }
+      .nav__links {
+        gap: var(--sp-6) !important;
+      }
+      .nav__link {
+        font-size: 0.8125rem !important;
+      }
+    }
+
+    @media (min-width: 769px) and (max-width: 980px) {
+      .nav-cta .nav-cta-text {
+        display: none;
+      }
+      .nav-cta {
+        padding-inline: 0.75rem !important;
+      }
+    }
+
     .subtle-card-cta {
       display: inline-flex;
       align-items: center;
@@ -1391,11 +1422,6 @@
         <!-- Info panel -->
         <div class="ba-info" data-reveal="right" style="justify-content: center;">
 
-          <a href="#" class="ba-cta" data-video-modal-open="blefa"
-            style="margin-bottom: 2.5rem; width: fit-content; color: var(--c-primary); border-bottom-color: rgba(75, 25, 75, 0.3);">
-            Saber mais sobre o procedimento
-            <span class="material-symbols-outlined" aria-hidden="true" style="margin-left: 2px;">play_circle</span>
-          </a>
 
           <div class="ba-protocol" style="margin-bottom: 2rem; border-left-color: var(--c-secondary);">
             <h4 class="ba-protocol__title" style="color: var(--c-primary);">Benefícios</h4>
@@ -1543,12 +1569,6 @@
 
         <!-- Info panel -->
         <div class="ba-info" data-reveal="right" style="justify-content: center;">
-
-          <a href="#" class="ba-cta" data-video-modal-open="laser-intimo"
-            style="margin-bottom: 2.5rem; width: fit-content;">
-            Saber mais sobre o procedimento
-            <span class="material-symbols-outlined" aria-hidden="true" style="margin-left: 2px;">play_circle</span>
-          </a>
 
           <div class="ba-protocol" style="margin-bottom: 2rem;">
             <h4 class="ba-protocol__title">Benefícios</h4>
@@ -1859,7 +1879,7 @@
               <div>
                 <h5 class="visit__contact-title">Fale Conosco</h5>
                 <p class="visit__contact-text">
-                  +55 11 99522-4461<br>contato@mulherez.com
+                  +55 11 99522-4461<br>contato@mulherezguarulhos.com.br
                 </p>
               </div>
             </div>
@@ -1960,7 +1980,7 @@
       </div>
 
       <div class="footer__col">
-        <span class="footer__heading">Siga-nos</span>
+        <span class="footer__heading">Redes Sociais</span>
         <div class="footer__socials">
           <a href="https://www.instagram.com/mulherez.jdmaia/" target="_blank" rel="noopener noreferrer"
             class="footer__social" aria-label="Instagram">
