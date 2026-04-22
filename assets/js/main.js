@@ -606,6 +606,18 @@ const initVideoModal = () => {
         { id: 'yB405m5isDs', title: 'Ninfoplastia a Laser' },
       ],
     },
+    blefaro: {
+      label: 'Blefaroplastia a Laser',
+      items: [
+        { id: '-iu613z3SnY', title: 'Blefaroplastia a Laser' },
+      ],
+    },
+    laser: {
+      label: 'Laser Íntimo',
+      items: [
+        { id: 'ofeKbUpv1kQ', title: 'Laser Íntimo' },
+      ],
+    },
   };
 
   let videos = [];
