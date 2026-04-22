@@ -3578,17 +3578,20 @@ input, textarea { font-family: inherit; }
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  width: 100%;
 }
 
 .video-modal__frame {
-  flex: 1;
+  flex: 1 1 auto;
   min-width: 0;
+  width: 100%;
 }
 
 .video-modal__frame-inner {
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 9;
+  min-height: 220px;
   background: #000;
   border-radius: var(--r-lg, 1rem);
   overflow: hidden;
@@ -3680,7 +3683,7 @@ body.video-modal-open {
   to   { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 900px) {
   .video-modal__stage {
     flex-direction: column;
     gap: 0.5rem;
