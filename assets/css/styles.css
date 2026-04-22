@@ -3231,17 +3231,17 @@ input, textarea { font-family: inherit; }
     font-size: 0.8125rem;
     gap: 6px;
     box-shadow: none;
-    border: 1.5px solid rgba(75,25,75,0.18);
-    background: transparent;
+    border: 1.5px solid #29D2C6;
+    background: #29D2C6;
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
-    color: var(--c-primary);
+    color: var(--c-white);
     font-weight: 600;
   }
   .soft-cta-btn:hover {
-    background: var(--c-primary);
+    background: #29D2C6;
     color: var(--c-white);
-    border-color: var(--c-primary);
+    border-color: #29D2C6;
     transform: none;
     box-shadow: none;
   }
@@ -3398,15 +3398,15 @@ input, textarea { font-family: inherit; }
     font-size: 0.8125rem;
     gap: 6px;
     box-shadow: none;
-    border: 1.5px solid rgba(75,25,75,0.15);
-    background: transparent;
-    color: var(--c-primary);
+    border: 1.5px solid #29D2C6;
+    background: #29D2C6;
+    color: var(--c-white);
     font-weight: 600;
   }
   .soft-cta-btn:hover {
-    background: var(--c-primary);
+    background: #29D2C6;
     color: var(--c-white);
-    border-color: var(--c-primary);
+    border-color: #29D2C6;
     transform: none;
     box-shadow: none;
   }
