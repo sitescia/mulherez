@@ -660,12 +660,12 @@ input, textarea { font-family: inherit; }
 }
 
 .btn--primary {
-  background: var(--gradient-brand);
+  background: #28D3C3;
   color: var(--c-white);
-  box-shadow: 0 6px 20px rgba(75,25,75,0.25);
+  box-shadow: 0 6px 20px rgba(40, 211, 195, 0.3);
 }
 .btn--primary:hover {
-  box-shadow: 0 12px 32px rgba(75,25,75,0.35);
+  box-shadow: 0 12px 32px rgba(40, 211, 195, 0.4);
 }
 .btn--primary:active { transform: scale(0.97); }
 
@@ -907,7 +907,7 @@ input, textarea { font-family: inherit; }
 
 /* Pill dark button (hero only) — inherits .btn shine via position:relative+overflow:hidden */
 .btn--pill-dark {
-  background: var(--c-primary);
+  background: #28D3C3;
   color: var(--c-white);
   font-size: 0.6875rem;
   font-weight: 700;
@@ -918,7 +918,7 @@ input, textarea { font-family: inherit; }
   border: none;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 18px rgba(75,25,75,0.28);
+  box-shadow: 0 4px 18px rgba(40, 211, 195, 0.3);
   transition: background 0.25s var(--ease-out), box-shadow 0.25s var(--ease-out), transform 0.25s var(--ease-out);
 }
 .btn--pill-dark::after {
@@ -940,8 +940,8 @@ input, textarea { font-family: inherit; }
   transform: translateX(100%);
 }
 .btn--pill-dark:hover {
-  background: var(--c-primary-light);
-  box-shadow: 0 8px 28px rgba(75,25,75,0.38);
+  background: #2ee0cf;
+  box-shadow: 0 8px 28px rgba(40, 211, 195, 0.42);
   transform: scale(1.04);
 }
 .btn--pill-dark:active { transform: scale(0.97); }
@@ -3015,25 +3015,23 @@ input, textarea { font-family: inherit; }
   letter-spacing: 0.04em;
   text-decoration: none;
   color: var(--c-white);
-  background: rgba(255, 255, 255, 0.08);
+  background: #28D3C3;
   border: 1px solid rgba(255, 255, 255, 0.22);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
   transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
   position: relative;
   z-index: 1;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.12);
+  box-shadow: 0 4px 24px rgba(40, 211, 195, 0.3), inset 0 1px 0 rgba(255,255,255,0.12);
   white-space: nowrap;
 }
 .soft-cta-btn svg {
-  opacity: 0.8;
+  opacity: 0.9;
   transition: transform 0.3s ease;
 }
 .soft-cta-btn:hover {
-  background: rgba(255, 255, 255, 0.15);
+  background: #2ee0cf;
   border-color: rgba(255, 255, 255, 0.4);
   transform: translateY(-2px);
-  box-shadow: 0 12px 36px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.2);
+  box-shadow: 0 12px 36px rgba(40, 211, 195, 0.45), inset 0 1px 0 rgba(255,255,255,0.2);
 }
 .soft-cta-btn:hover svg {
   transform: scale(1.1);
