@@ -3238,12 +3238,28 @@ input, textarea { font-family: inherit; }
     color: var(--c-white);
     font-weight: 600;
   }
+  .soft-cta-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+    transform: skewX(-20deg);
+    z-index: -1;
+    transition: left 0.7s ease;
+    pointer-events: none;
+  }
   .soft-cta-btn:hover {
     background: #29D2C6;
     color: var(--c-white);
     border-color: #29D2C6;
-    transform: none;
-    box-shadow: none;
+    transform: translateY(-2px);
+    box-shadow: 0 0 24px rgba(40, 211, 195, 0.35);
+  }
+  .soft-cta-btn:hover::before {
+    left: 200%;
   }
 
   .cards-grid {
@@ -3403,12 +3419,28 @@ input, textarea { font-family: inherit; }
     color: var(--c-white);
     font-weight: 600;
   }
+  .soft-cta-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+    transform: skewX(-20deg);
+    z-index: -1;
+    transition: left 0.7s ease;
+    pointer-events: none;
+  }
   .soft-cta-btn:hover {
     background: #29D2C6;
     color: var(--c-white);
     border-color: #29D2C6;
-    transform: none;
-    box-shadow: none;
+    transform: translateY(-2px);
+    box-shadow: 0 0 24px rgba(40, 211, 195, 0.35);
+  }
+  .soft-cta-btn:hover::before {
+    left: 200%;
   }
 }
 
