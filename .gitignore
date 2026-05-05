@@ -33,3 +33,9 @@ yarn-error.log
 # ── Logs ───────────────────────────────────────────
 *.log
 logs/
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+!.env.example
